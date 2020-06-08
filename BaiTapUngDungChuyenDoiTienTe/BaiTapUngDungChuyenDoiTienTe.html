@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+            <form name="Convert" onsubmit="Convert1(); return false;" method="get">
+            <table border="0" cellpadding="0" cellspacing="0" width="400px">
+                <tr>
+                    <td> Amount</td>
+                    <td> From</td>
+                    <td> To</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                   
+                    <td> <input type="number" name="Amount" id="Amount" width="10" value="0"></td>
+                    <td>
+                        <select id="From" name="From" width="10" value="0">
+                            <option id="FVND">VND</option>
+                            <option id="FUSD">USD</option>
+
+                    </td>
+                    <td>
+                        <select id="To" name="To" width="10" value="0">
+                            <option id="TVND">VND</option>
+                            <option id="TUSD">USD</option>
+
+                    </td>
+                   
+                    <td><input type="submit" value="Convert"> </td>
+                </tr>
+                <tr><td  id="result" height="20" colspan="4" style="color:blue;"></td></tr>
+            </form> 
+            </table>
+            
+        <script type='text/javascript' src='BaiTapUngDungChuyenDoiTienTe.js'>
+      
+        </script>
+  
+          
+
+    </body>
+
+</html>
