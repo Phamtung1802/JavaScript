@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+            <form name="TinhDiem" onsubmit="hienthidiem(); return false;" method="GET">
+            <table border="0" cellpadding="0" cellspacing="0" width="500px">
+                <tr>
+                    <td> Tên Sinh Viên</td>
+                    <td> Điểm Vật Lý</td>
+                    <td> Điểm Hóa học</td>
+                    <td> Điểm Sinh học</td>
+                </tr>
+                <tr>
+                    <td> <input type="text" name="tenSV" id="tenSV" width="30" placeholder="Nhap ten sinh vien"></td>
+                    <td> <input type="number" name="DiemLy" id="DiemLy" width="10" value="0"></td>
+                    <td> <input type="number" name="DiemHoa" id="DiemHoa" width="10" value="0"></td>
+                    <td> <input type="number" name="DiemSinh" id="DiemSinh" width="10" value="0"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><input type="submit" value="Tính Điểm"> </td>
+                    <td><input type="reset" value="Reset"></td>
+                </tr>
+            </table>
+            </form>
+            <br><br><br><br>
+            <form name="TinhNhietDo" onsubmit="quydoi(); return false;">
+                <table border="1" cellpadding="0" cellspacing="0" width="200px">
+                    <tr>
+
+                        <td> Độ C</td>
+                        <td> Độ F</td>
+                    </tr>
+                    <tr>
+                   
+                        <td> <input type="number" name="DoC" id="DoC" width="10"></td>
+                        <td id="NhietDoQuyDoi"> </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      
+                        <td><input type="submit" value="Quy Đổi" > </td>
+                        <td><input type="reset" value="Reset"></td>
+                    </tr>
+                </table>
+            </form>
+            <br><br><br><br>
+            <form name="TinhDienTich" onsubmit="DThinhtron(); return false;">
+                <table border="1" cellpadding="0" cellspacing="0" width="200px">
+                    <tr>
+
+                        <td> Bán Kính Hình Tròn</td>
+                        <td> Diện Tích</td>
+                    </tr>
+                    <tr>
+                   
+                        <td> <input type="number" name="BanKinh" id="BanKinh" width="10"></td>
+                        <td id="HinhTron"> </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      
+                        <td><input type="submit" value="Tính Diện Tích" > </td>
+                        <td><input type="reset" value="Reset"></td>
+                    </tr>
+                </table>
+            </form>
+            <br><br><br><br>
+            <form name="TinhChuVi" onsubmit="CVhinhtron(); return false;">
+                <table border="1" cellpadding="0" cellspacing="0" width="200px">
+                    <tr>
+
+                        <td> Đường Kính Hình Tròn</td>
+                        <td> Chu Vi</td>
+                    </tr>
+                    <tr>
+                   
+                        <td> <input type="number" name="DuongKinh" id="DuongKinh" width="10"></td>
+                        <td id="ChuVi"> </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      
+                        <td><input type="submit" value="Tính Chu Vi" > </td>
+                        <td><input type="reset" value="Reset"></td>
+                    </tr>
+                </table>
+            </form>
+        <script type='text/javascript' src='BaiTapBienKieuDuLieuVaToanTu.js'></script>
+  
+          
+
+    </body>
+
+</html>
