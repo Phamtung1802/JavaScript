@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .button {
+                width: 100%;
+                height:30px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <table border="0" cellpadding="0" cellspacing="0" width="360px">
+                <caption align="center"><h1>Calculator</h1></caption>
+                <tr>
+                    <td> Số 1</td>
+                    <td> Số 2</td>
+                    <td colspan="2"> Kết Quả</td>
+                </tr>
+                <tr>  
+                    <td> <input type="number" name="Num1" id="Num1" width="120px" value="0"></td>
+                    <td> <input type="number" name="Num2" id="Num2" width="120px" value="0"></td>
+                    <td colspan="2"> <input type="number" name="Result" id="Result" width="240px" value="0" readonly="readonly"></td>
+                </tr>
+                    <td><button class="button" value="Addition(+)" onclick="Add(); return false;" width="80px" height="30px">Addition(+)</button> </td>
+                    <td><button class="button" value="Subtraction(-)" onclick="Subtract(); return false;">Subtraction(-)</button> </td>
+                    <td><button class="button" value="Multiplication(X)" onclick="Multi(); return false;">Multiplication(X)</button> </td>
+                    <td><button class="button" value="Division(/)" onclick="Division(); return false;">Division(/)</button> </td>
+                <tr>
+                </tr>
+        </form> 
+            </table>
+            
+        <script type='text/javascript' src='BaiTapUngDungMayTinh.js'>
+      
+        </script>
+  
+          
+
+    </body>
+
+</html>
