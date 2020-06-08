@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script>
+            function showMessageAlert(){
+                let i = 10
+                let f = 20.5
+                let b = true
+                let s = 'Hà Nội'
+                document.write('i = ' + i)
+                document.write('<br/>')
+                document.write('f = ' + f)
+                document.write('<br/>')
+                document.write('b = ' + b)
+                document.write('<br/>')
+                document.write('s = ' + s)
+            }
+            function HinhChuNhat(){
+                let width = 20
+                let height = 10
+                let area = width * height
+                document.write('Area = ' + area)
+            }
+            function BoiSoab(){
+                let a = prompt("Nhap a");
+                let b = prompt("Nhap b")
+                let chiahet = b%a;
+                if (chiahet==0){
+                    alert("a la boi so cua b")
+                }
+                else
+                {
+                    alert("a khong phai la boi so cua b")
+                }
+              
+            }
+          
+            
+           </script>
+    </head>
+    <body>
+        <div id="messageDiv"></div>
+        <button type="button" onclick="showMessageAlert();">in ra gia tri</button>
+        <button type="button" onclick="HinhChuNhat();">Hinh Chu Nhat</button>
+        <button type="button" onclick="BoiSoab();">Boi So A B</button>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
