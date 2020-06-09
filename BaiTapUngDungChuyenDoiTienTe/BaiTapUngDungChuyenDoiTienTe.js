@@ -1,5 +1,6 @@
 
-        function Convert1() {
+        function Convert1() 
+        {
             Sotien = parseInt(document.getElementById('Amount').value);
             DonviDen = document.getElementById('To').value;
             DonviDi = document.getElementById('From').value;
