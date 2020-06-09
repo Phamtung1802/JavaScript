@@ -3,11 +3,8 @@ function tinhTong() {
   let b = document.getElementById('b').value;
   let tong= parseInt(a) + parseInt(b);
   document.getElementById('tong').value= tong;
-
-  if ((tong < 4)){
-    result=('Below')
-  } else{
-    result=('Over')
-  }
+  result = (a + b < 4) ? 'Below' : 'Over';
   alert(result);
 }
+
+ 
