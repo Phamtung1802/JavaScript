@@ -1,0 +1,56 @@
+.mainbox {
+    width:500px;
+    height:580px;
+    border:solid;
+    border-width: 10px;
+    font-family: tahoma;
+    color: blue;
+    border-color:black;
+    margin:0 auto;
+    background-color: rgb(116, 114, 114);
+}
+.hienThi {
+    width:440px;
+    height:50px;
+    border:solid;
+    border-width: 0.2px;
+    font-family: tahoma;
+    color: blue;
+    border-color:grey;
+    margin: 15px auto;
+    text-align: right;
+    padding-top: 10px;
+    font-size: 20pt;
+    padding-right: 30px;
+    background-color: white;
+}
+.buttonBox {
+    width:470px;
+    height:465px;
+    border:solid;
+    border-width: 0.2px;
+    font-family: tahoma;
+    color: blue;
+    border-color:grey;
+    margin: 15px auto;
+    background-color: rgb(156, 147, 147);
+}
+.button {
+    width:70px;
+    height:70px;
+    border:groove;
+    border-style: outset;
+    border-width: 4px;
+    font-family: tahoma;
+    color: blue;
+    border-color:grey;
+    margin: 23px;
+    float:left;
+    text-align: center;
+    text-decoration: blue;
+    font-family: tahoma;
+    background-color: white;
+    font-weight: lighter;
+    font-size: 20pt;
+
+}
