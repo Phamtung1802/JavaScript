@@ -1,0 +1,23 @@
+.mainBox {
+    width:800px;
+    border:solid;
+    border-width: 1px;
+    font-family: tahoma;
+    color: rgb(41, 59, 45);
+    border-color:black;
+    margin:0 auto;
+    background-color: #f1ebeb;
+    padding:0px;
+}
+.nhapAB {
+    width:492px;
+    height:100px;
+    margin: 2px;
+    border-width: 1px;
+    border:solid;
+    float:left;
+    background-color: #cbce44;
+}
+.numInput{
+    margin:5px;
+}
