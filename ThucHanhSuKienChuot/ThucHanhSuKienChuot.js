@@ -1,4 +1,3 @@
-
 let imgObj = null;
 window.onload = function init() {
     imgObj = document.getElementById('myImage');
@@ -9,4 +8,3 @@ window.onload = function init() {
 function moveRight() {
     imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
 }
-
