@@ -1,0 +1,14 @@
+.mainBox {
+    width:800px;
+    border:solid;
+    border-width: 1px;
+    font-family: tahoma;
+    color: rgb(41, 59, 45);
+    border-color:black;
+    margin:0 auto;
+    background-color: #f1ebeb;
+    padding:0px;
+}
+.numInput{
+    margin:5px;
+}
