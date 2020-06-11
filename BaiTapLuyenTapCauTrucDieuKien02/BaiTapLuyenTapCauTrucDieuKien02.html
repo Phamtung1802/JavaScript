@@ -6,119 +6,135 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="10.css">
         <script type='text/javascript' src='BaiTapLuyenTapCauTrucDieuKien02.js'></script>
+        <style>
+            .mainBox {
+            width:800px;
+            border:solid;
+            border-width: 1px;
+            font-family: tahoma;
+            color: rgb(41, 59, 45);
+            border-color:black;
+            margin:0 auto;
+            background-color: #f1ebeb;
+            padding:0px;
+            }
+            input {
+            margin:5px;
+            }  
+        </style>
     </head>
     <body>
         <div class='mainBox'>
-            <div class="nhaptuoi">
+            <br><br>
+            <div>
                 <form>
                     <div>&nbsp;Chuyển đổi độ C sang độ F</div>
-                    <input class="numInput" type="number" id="doC" name="doC" placeholder="Nhập Độ C" value="">
+                    <input  type="number" id="doC" name="doC" placeholder="Nhập Độ C" value="">
                     <button onclick="chuyenDoiNhietDo(); return false;">Chuyển Đổi</button>
-                    <div class="numInput" id="doiNhietDo"></div>
+                    <div  id="doiNhietDo"></div>
                     <br><br>
                 </form>
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Chuyển đổi met sang feet</div>
-                    <input class="numInput" type="number" id="chieuDai" name="chieuDai" placeholder="Nhập chiều dài" value="">
+                    <input  type="number" id="chieuDai" name="chieuDai" placeholder="Nhập chiều dài" value="">
                     <select id="donVi">
                         <option id="met" name="met" value="m">meter</option>
                         <option id="feet" name="feet" value="feet">feet</option>
                     </select>
                     <button onclick="doiChieuDai(); return false;">Chuyển Đổi</button>
-                    <div class="numInput" id="doiChieuDai"></div>
+                    <div  id="doiChieuDai"></div>
                     <br><br>
                 </form>
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Tính diện tích hình vuông</div>
-                    <input class="numInput" type="number" id="chieuDaiCanh" name="chieuDaiCanh" placeholder="Nhập chiều dài cạnh" value="">
+                    <input  type="number" id="chieuDaiCanh" name="chieuDaiCanh" placeholder="Nhập chiều dài cạnh" value="">
                     <button onclick="tinhDienTichHinhVuong(); return false;">Tính</button>
-                    <div class="numInput" id="dienTichHinhVuong"></div>
+                    <div  id="dienTichHinhVuong"></div>
                     <br><br>
                 </form>
             </div>
             
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Tính diện tích tam giác vuông</div>
-                    <input class="numInput" type="number" id="canhDai" name="canhDai" placeholder="Nhập cạnh dài" value="">
-                    <input class="numInput" type="number" id="canhNgan" name="canhNgan" placeholder="Nhập cạnh ngắn" value="">
+                    <input  type="number" id="canhDai" name="canhDai" placeholder="Nhập cạnh dài" value="">
+                    <input  type="number" id="canhNgan" name="canhNgan" placeholder="Nhập cạnh ngắn" value="">
                     <button onclick="dientichTamGiacVuong(); return false;">Tính</button>
-                    <div class="numInput" id="dienTamGiacVuong"></div>
+                    <div id="dienTamGiacVuong"></div>
                 </form>
               &nbsp;
             </div>
-            <div class="nhaptuoi">
+            <div>
             <form>
                 <div>&nbsp;Tính diện tích hình chữ nhật</div>
-                <input class="numInput" type="number" id="canh1" name="canh1" placeholder="Nhập cạnh 1" value="">
-                <input class="numInput" type="number" id="canh2" name="canh2" placeholder="Nhập cạnh 2" value="">
+                <input  type="number" id="canh1" name="canh1" placeholder="Nhập cạnh 1" value="">
+                <input  type="number" id="canh2" name="canh2" placeholder="Nhập cạnh 2" value="">
                 <button onclick="dientichHinhChuNhat(); return false;">Tính</button>
-                <div class="numInput" id="dientichHinhChuNhat"></div>
+                <div  id="dientichHinhChuNhat"></div>
             </form>
             &nbsp;
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Giải phương trình bậc 1 ax+b=c</div>
-                    <input class="numInput" type="number" id="thamSo_a" name="thamSo_a" placeholder="Nhập a" value="">
-                    <input class="numInput" type="number" id="thamSo_b" name="thamSo_a" placeholder="Nhập b" value="">
-                    <input class="numInput" type="number" id="thamSo_c" name="thamSo_c" placeholder="Nhập c" value="">
+                    <input  type="number" id="thamSo_a" name="thamSo_a" placeholder="Nhập a" value="">
+                    <input  type="number" id="thamSo_b" name="thamSo_a" placeholder="Nhập b" value="">
+                    <input  type="number" id="thamSo_c" name="thamSo_c" placeholder="Nhập c" value="">
                     <button onclick="phuongTrinhBac1(); return false;">Giải</button>
-                    <div class="numInput" id="phuongTrinhBac1"></div>
+                    <div  id="phuongTrinhBac1"></div>
                 </form>
             &nbsp;
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Giải phương trình bậc 2: dx<sup>2</sup>+ex+f=g</div>
-                    <input class="numInput" type="number" id="thamSo_d" name="thamSo_d" placeholder="Nhập d" value="">
-                    <input class="numInput" type="number" id="thamSo_e" name="thamSo_e" placeholder="Nhập e" value="">
-                    <input class="numInput" type="number" id="thamSo_f" name="thamSo_f" placeholder="Nhập f" value="">
-                    <input class="numInput" type="number" id="thamSo_g" name="thamSo_g" placeholder="Nhập g" value="">
+                    <input  type="number" id="thamSo_d" name="thamSo_d" placeholder="Nhập d" value="">
+                    <input  type="number" id="thamSo_e" name="thamSo_e" placeholder="Nhập e" value="">
+                    <input  type="number" id="thamSo_f" name="thamSo_f" placeholder="Nhập f" value="">
+                    <input  type="number" id="thamSo_g" name="thamSo_g" placeholder="Nhập g" value="">
                     <button onclick="phuongTrinhBac2(); return false;">Giải</button>
-                    <div class="numInput" id="phuongTrinhBac2"></div>
+                    <div  id="phuongTrinhBac2"></div>
                 </form>
             &nbsp;
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Kiểm tra cạnh tam giác</div>
-                    <input class="numInput" type="number" id="canh_a" name="canh_a" placeholder="Nhập cạnh a" value="">
-                    <input class="numInput" type="number" id="canh_b" name="canh_b" placeholder="Nhập cạnh b" value="">
-                    <input class="numInput" type="number" id="canh_c" name="canh_c" placeholder="Nhập cạnh c" value="">
+                    <input  type="number" id="canh_a" name="canh_a" placeholder="Nhập cạnh a" value="">
+                    <input  type="number" id="canh_b" name="canh_b" placeholder="Nhập cạnh b" value="">
+                    <input  type="number" id="canh_c" name="canh_c" placeholder="Nhập cạnh c" value="">
                     <button onclick="dieuKienTamgiac(); return false;">Kiểm Tra</button>
-                    <div class="numInput" id="dieuKienTamgiac"></div>
+                    <div  id="dieuKienTamgiac"></div>
                 </form>
             &nbsp;
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Tính Giá Điện</div>
-                    <input class="numInput" type="number" id="so_Dien" name="so_Dien" placeholder="Nhập số điện" value="">
+                    <input  type="number" id="so_Dien" name="so_Dien" placeholder="Nhập số điện" value="">
                     <button onclick="tinhGiaDien(); return false;">Tính</button>
-                    <div class="numInput" id="tinhGiaDien"></div>
+                    <div  id="tinhGiaDien"></div>
                 </form>
             &nbsp;
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Tính thuế thu nhập cá nhân</div>
-                    <input class="numInput" type="number" id="thu_Nhap" name="thu_Nhap" placeholder="Nhập thu nhập 1 tháng" value="">
+                    <input  type="number" id="thu_Nhap" name="thu_Nhap" placeholder="Nhập thu nhập 1 tháng" value="">
                     <button onclick="tinhThue(); return false;">Tính</button>
-                    <div class="numInput" id="tinhThue"></div>
+                    <div  id="tinhThue"></div>
                 </form>
             &nbsp;
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Tính thu lãi ngân hàng</div>
-                    <input class="numInput" type="number" id="tien_gui" name="tien_gui" placeholder="Nhập số tiền gốc" value="">
+                    <input  type="number" id="tien_gui" name="tien_gui" placeholder="Nhập số tiền gốc" value="">
                     <select id="ki_han">
                         <option value="1">không kỳ hạn</option>
                         <option value="2">1 tháng</option>
@@ -126,17 +142,13 @@
                         <option value="4">6 tháng</option>
                         <option value="5">1 năm</option>
                     </select>
-                    <input class="numInput" type="number" id="so_ki_han" name="so_ki_han" placeholder="Nhập số kì hạn" value="">
+                    <input  type="number" id="so_ki_han" name="so_ki_han" placeholder="Nhập số kì hạn" value="">
                     <button onclick="tinhLai(); return false;">Tính</button>
-                    <div class="numInput" id="tinhLai"></div>
+                    <div  id="tinhLai"></div>
                 </form>
             &nbsp;
             </div>
         </div>
-       
-            
-        </div>
-        
     </body>
 
 </html>

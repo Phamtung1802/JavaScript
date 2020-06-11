@@ -6,84 +6,97 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="10.css">
         <script type='text/javascript' src='BaiTapLuyenTapCauTrucDieuKien01.js'></script>
+        <style>
+            .mainBox {
+            width:800px;
+            border:solid;
+            border-width: 1px;
+            font-family: tahoma;
+            color: rgb(41, 59, 45);
+            border-color:black;
+            margin:0 auto;
+            background-color: #f1ebeb;
+            padding:0px;
+            }
+            input {
+            margin:5px;
+            }  
+        </style>
     </head>
     <body>
         <div class='mainBox'>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Kiểm tra a chia b</div>
-                    <input class="numInput" type="number" id="a" name="a" placeholder="Nhập a" value="">
-                    <input class="numInput" type="number" id="b" name="b" placeholder="Nhập b" value="">
+                    <input  type="number" id="a" name="a" placeholder="Nhập a" value="">
+                    <input  type="number" id="b" name="b" placeholder="Nhập b" value="">
                     <button onclick="kiemTraChia()">Kiểm Tra</button>
                 </form>
               &nbsp;
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Kiểm tra tuổi vào lớp 10</div>
-                    <input class="numInput" type="number" id="tuoi" name="tuoi" placeholder="Nhập Tuổi" value="">
+                    <input  type="number" id="tuoi" name="tuoi" placeholder="Nhập Tuổi" value="">
                     <button onclick="kiemTraTuoi(); return false;">Kiểm Tra</button>
-                    <div class="numInput" id="lop10"></div>
+                    <div  id="lop10"></div>
                     <br><br>
                 </form>
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Kiểm tra số nguyên lớn hay nhỏ hơn 0</div>
-                    <input class="numInput" type="number" id="soNguyen" name="soNguyen" placeholder="Nhập số" value="">
+                    <input  type="number" id="soNguyen" name="soNguyen" placeholder="Nhập số" value="">
                     <button onclick="kiemTraSo(); return false;">Kiểm Tra</button>
-                    <div class="numInput" id="soNguyenkq"></div>
+                    <div  id="soNguyenkq"></div>
                     <br><br>
                 </form>
               &nbsp;
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Chọn số lớn nhất</div>
-                    <input class="numInput" type="number" id="so1" name="so1" placeholder="Nhập số thứ nhất" value="">
-                    <input class="numInput" type="number" id="so2" name="so2" placeholder="Nhập số thứ 2" value="">
-                    <input class="numInput" type="so3" id="so3" name="soNguyen" placeholder="Nhập số thứ 3" value="">
+                    <input  type="number" id="so1" name="so1" placeholder="Nhập số thứ nhất" value="">
+                    <input  type="number" id="so2" name="so2" placeholder="Nhập số thứ 2" value="">
+                    <input  type="so3" id="so3" name="soNguyen" placeholder="Nhập số thứ 3" value="">
                     <button onclick="kiemTraMax(); return false;">Kiểm Tra</button>
-                    <div class="numInput" id="Maxkq"></div>
+                    <div  id="Maxkq"></div>
                     <br><br>
                 </form>
             &nbsp;
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Xếp loại Học Sinh</div>
-                    <input class="numInput" type="number" id="dauKi" min="1" max="10" name="dauKi" placeholder="Nhập điểm đầu kỳ" value="">
-                    <input class="numInput" type="number" id="giuaKi" name="giuaKi" placeholder="Nhập điểm giữa kỳ" value="" min="1" max="10">
-                    <input class="numInput" type="number" id="cuoiKi" min="1" max="10"name="cuoiKi" placeholder="Nhập điểm cuối kỳ" value="">
+                    <input  type="number" id="dauKi" min="1" max="10" name="dauKi" placeholder="Nhập điểm đầu kỳ" value="">
+                    <input  type="number" id="giuaKi" name="giuaKi" placeholder="Nhập điểm giữa kỳ" value="" min="1" max="10">
+                    <input  type="number" id="cuoiKi" min="1" max="10"name="cuoiKi" placeholder="Nhập điểm cuối kỳ" value="">
                     <button onclick="xepLoai(); return false;">Kiểm Tra</button>
-                    <div class="numInput" id="diemPhay"></div>
-                    <div class="numInput" id="xepLoai"></div>
+                    <div  id="diemPhay"></div>
+                    <div  id="xepLoai"></div>
                     <br><br>
                 </form>
             &nbsp;
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Kiểm tra Hoa Hồng theo doanh số</div>
-                    <input class="numInput" type="number" id="doanhSo" name="doanhSo" placeholder="Nhập Doanh số" value="">
+                    <input  type="number" id="doanhSo" name="doanhSo" placeholder="Nhập Doanh số" value="">
                     <button onclick="kiemTraHoaHong(); return false;">Kiểm Tra</button>
-                    <div class="numInput" id="hoaHong"></div>
+                    <div  id="hoaHong"></div>
                     <br><br>
                 </form>
             </div>
-            <div class="nhaptuoi">
+            <div>
                 <form>
                     <div>&nbsp;Kiểm tra cước điện thoại theo phút sử dụng</div>
-                    <input class="numInput" type="number" id="soPhut" name="soPhut" placeholder="Nhập số phút" value="">
+                    <input  type="number" id="soPhut" name="soPhut" placeholder="Nhập số phút" value="">
                     <button onclick="kiemTraCuoc(); return false;">Kiểm Tra</button>
-                    <div class="numInput" id="giaCuoc"></div>
+                    <div  id="giaCuoc"></div>
                     <br><br>
                 </form>
             </div>
         </div>
-        
     </body>
-
 </html>
