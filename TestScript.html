@@ -8,34 +8,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
         <script>
-            function showMessageAlert(){
-                var a = "2";
-                var b = 5;
-                var c = 8;
-                d = a+b+c;
-                alert(d);
+        function LoopTest(){
+            let i;
+            let text="";
+            for (i = 0; i < 5; i++) {
+            text += "The number is " + i + "<br>";
+            document.getElementById('ketqua').innerHTML=text ;
             }
-            function showMessageGetElement(){
-            document.getElementById('messageDiv').innerHTML = 'Xin chào!';
-            
+        }
+        function LoopTest2(){
+            let i;
+            let n=parseInt(document.getElementById('soCuoi').value);
+            console.log(n);
+            let tong=0;
+            for (i = 0; i < n; i++) {
+            tong=(i-1)+i;
+            document.getElementById('ketqua2').innerHTML='tổng là= '+tong+'<br>' ;
             }
-            function showMessageConsole(){
-            console.log('Xin chào!');
-            }
-            function showMessageWWrite(){
-            document.write('Xin chào!');
-            }
-            
-           </script>
+        }
+        </script>
     </head>
     <body>
         <div id="messageDiv"></div>
-        <button type="button" onclick="showMessageAlert();">Click Me!</button>
-        <button type="button" onclick="showMessageGetElement();">Click Me!</button>
-        <button type="button" onclick="showMessageConsole();">Click Me!</button>
-        <button type="button" onclick="showMessageWWrite();">Click Me!</button>
-    
-        
-        <script src="" async defer></script>
+        <button type="button" onclick="LoopTest();">Hiển thị chuỗi the number is N </button>
+        <div id='ketqua'>&nbsp;</div>
+        <div id="messageDiv"></div>
+        <input type="number" id="soCuoi">
+        <button type="button" onclick="LoopTest2();">tính tổng các phần tử từ 1 đến i </button>
+        <div id='ketqua2'>&nbsp;</div>
     </body>
 </html>

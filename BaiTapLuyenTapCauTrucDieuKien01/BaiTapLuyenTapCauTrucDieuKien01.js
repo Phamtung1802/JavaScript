@@ -32,7 +32,6 @@ function kiemTraSo() {
   }
 
 }
-
 function kiemTraMax() {
   so1 = document.getElementById('so1').value;
   so2 = document.getElementById('so2').value;
@@ -49,7 +48,6 @@ function kiemTraMax() {
   }
   else{ document.getElementById('Maxkq').innerHTML=('không có số lớn nhất');}
   }
-
 function xepLoai() {
   dauKi = document.getElementById('dauKi').value;
   giuaKi = document.getElementById('giuaKi').value;
@@ -59,7 +57,6 @@ function xepLoai() {
   document.getElementById('diemPhay').innerHTML=('Điểm phẩy:'+ diemPhayLamTron);
   document.getElementById('xepLoai').innerHTML=(diemPhayLamTron>=8)?('Loại Giỏi'):((diemPhayLamTron>=6)?('Loại Khá'):(diemPhayLamTron>=4.5)?('Loại trung bình'):('Loại yếu'));
 }
-
 function kiemTraHoaHong() {
   doanhSo = document.getElementById('doanhSo').value;
   hoaHong = doanhSo;
@@ -76,7 +73,6 @@ function kiemTraHoaHong() {
     document.getElementById('hoaHong').innerHTML=('Tiền Hoa Hồng: '+hoaHong);
   }
 }
-
 function kiemTraCuoc() {
   soPhut = document.getElementById('soPhut').value;
   phiThueBao = 25000;
@@ -85,7 +81,6 @@ function kiemTraCuoc() {
   giaSau200Phut = 200;
   thoiLuongdu = soPhut;
   tongTien= 0;
-  
   if (soPhut>200) {
   thoiLuongdu = soPhut-200;
   tongTien=phiThueBao+gia50PhutDau*50+gia150Phutsau*150+thoiLuongdu*giaSau200Phut
