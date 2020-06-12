@@ -9,14 +9,15 @@
         <link rel="stylesheet" href="">
         <script>
         function LoopTest(){
-            let i;
-            let text="";
-            for (i = 0; i < 5; i++) {
-            text += "The number is " + i + "<br>";
-            document.getElementById('ketqua').innerHTML=text ;
-            }
+                let i = 3;
+                while (i < 6) {
+                console.log(i);
+                i += 1;
+                }
+                console.log(i);
+
         }
-        function LoopTest2(){
+        /*function LoopTest2(){
             let i;
             let n=parseInt(document.getElementById('soCuoi').value);
             let tong=0;
@@ -24,7 +25,7 @@
             tong=(tong+i);
             document.getElementById('ketqua2').innerHTML='tổng là= '+tong+'<br>' ;
             }
-        }
+        }*/
         </script>
     </head>
     <body>
