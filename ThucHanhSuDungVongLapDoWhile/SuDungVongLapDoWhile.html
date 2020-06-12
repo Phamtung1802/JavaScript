@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script>
+        function LoopTest(){
+            let value = null;
+            do {
+            value = prompt("Nhập vào số từ 1 -> 10");
+            alert('số mà bạn vừa nhập là='+value)
+            } while (value > 1 && value < 10);
+        }
+        </script>
+    </head>
+    <body>
+        <div id="messageDiv"></div>
+        <button type="button" onclick="LoopTest();"> Kiểm tra vòng lặp Do While</button>
+        <div id='ketqua'>&nbsp;</div>
+    </body>
+</html>

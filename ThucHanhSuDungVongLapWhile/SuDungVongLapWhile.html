@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script>
+        function LoopTest(){
+            let num = parseInt(prompt("Enter a number: "));
+            let total = num;
+            while( num != -1 ) {
+            num = parseInt(prompt("Enter a number: "));
+            total=total+num;
+            }
+            alert(total);
+        }
+        function LoopTest2(){
+            let i=0;
+            while( i<100) {
+            console.log(i);
+            document.getElementById('ketqua2').innerHTML+="<hr width = " + i + ">";
+            i++;
+            console.log(i);
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <div id="messageDiv"></div>
+        <button type="button" onclick="LoopTest();">tính tổng các số nhập vào khác -1 </button>
+        <div id='ketqua'>&nbsp;</div>
+        <div id="messageDiv"></div>
+        <button type="button" onclick="LoopTest2();">Vẽ 1 loạt các dòng kẻ </button>
+        <div id='ketqua2'></div>
+    </body>
+</html>
