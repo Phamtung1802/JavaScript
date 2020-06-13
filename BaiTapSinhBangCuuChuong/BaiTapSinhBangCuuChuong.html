@@ -10,8 +10,10 @@
         
     </head>
     <body>
-        <table border="1">
+        <table border="1" style="width:1000px;">
             <tbody id="bangcuuchuong">
+                <tr>
+                </tr>
             </tbody> 
         </table>
         <script>
@@ -19,7 +21,7 @@
             let so1=2;
             let so2=1;
             while(so1<=9){
-                bang+='<tr>';
+                bang+='<tr >';
                 while(so2<=9){
                     bang+='<td>'+so1+"x"+so2+"="+(so1*so2)+'</td>';
                     so2++;
@@ -30,6 +32,6 @@
             }
             document.getElementById('bangcuuchuong').innerHTML=bang;
             console.log(bang);
-        </script>   
+        </script> 
     </body>
 </html>
