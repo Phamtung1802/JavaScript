@@ -7,17 +7,163 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
-        
-    </head>
+
+</head>
     <body>
         <div id="luyentap1">
-
+            <div>Đếm từ 1 đến 99</div>
+            <input type="number" id="dem1den99">
+            <button onclick="demTu1Den99(); return false;">Đếm</button><br><br><br>
+            <div>Hiển thị 20 số trong dãy fibonacci đầu tiên</div>
+            <input type="number" id="hienthifibonacci">
+            <button onclick="hienthifibonacci(); return false;">Hiển Thị</button><br><br><br>
+            <div>Tìm số Fibonacci chia hết cho 5 đầu tiên</div>
+            <input type="number" id="hienthifibonacci">
+            <button onclick="timFibonaccichia5(); return false;">Hiển Thị</button><br><br><br>
+            <div>Tính tổng 20 số Fibonancci đầu tiên</div>
+            <input type="number" id="hienthifibonacci">
+            <button onclick="tong20SoDauTien(); return false;">Hiển Thị</button><br><br><br>
+            <div>Tính tổng 30 số chia hết cho 7 đầu tiên</div>
+            <input type="number" id="hienthifibonacci">
+            <button onclick="tongSoChia7(); return false;">Hiển Thị</button><br><br><br>
+            <div>in Fizz Buzz</div>
+            <input type="number" id="hienthifibonacci">
+            <button onclick="fizzBuzz(); return false;">Hiển Thị</button><br><br><br>
+            <div>Game Đoán Số</div>
+            <input type="number" id="hienthifibonacci">
+            <button onclick="gameDoanSo(); return false;">Chơi</button><br><br><br>
+   </div>
+        <div id="ketqua">
+            Kết Quả Là: 
         </div>
-        <div></div>
         <script>
-
-           
-           
-        </script> 
+            function demTu1Den99(){
+                let i=1;
+                while(i<99){
+                    i++;
+                }
+                alert('Số là: '+i);
+            }
+            ///////////////////////////////////////////////////////////////////////////////////////
+            function hienthifibonacci(){
+                document.getElementById('ketqua').innerHTML= "Kết quả 20 số đầu tiên Là: ";
+                let i=1;
+                let j=1;
+                let count=1;
+                document.getElementById('ketqua').innerHTML+= i+" "+j+" ";
+                while(count<=18){
+                     so=i+j;
+                     document.getElementById('ketqua').innerHTML+= so+" ";
+                     j=i;
+                     i=so;
+                     count++;
+                }
+            }
+            //////////////////////////////////////////////////////////////////////////////////////
+            function timFibonaccichia5(){
+                document.getElementById('ketqua').innerHTML= "Kết quả số đầu tiên chia hết cho 5 Là: ";
+                let i=1;
+                let j=1;
+                let so;
+                while(so%5!=0){
+                     so=i+j;
+                     j=i;
+                     i=so;
+                }
+                document.getElementById('ketqua').innerHTML+= so+" ";
+            }
+            /////////////////////////////////////////////////////////////////////////////////////
+            function tong20SoDauTien(){
+                let tong=0;
+                let i=1;
+                let j=1;
+                let count=1;
+                document.getElementById('ketqua').innerHTML+= i+" "+j+" ";
+                while(count<=20){
+                     so=i+j;
+                     tong+=so;
+                     j=i;
+                     i=so;
+                     count++;
+                }
+                document.getElementById('ketqua').innerHTML= "Kết quả tổng 20 số đầu tiên Là: "+so;
+            }
+            ////////////////////////////////////////////////////////////////////////////////////
+            function tongSoChia7(){
+                let tong=0;
+                let i=1;
+                let count=1;
+                while(count<=30){
+                    if (i%7==0){
+                        tong+=i;
+                        count++;
+                    }
+                    i++;
+                }
+                document.getElementById('ketqua').innerHTML= "Kết quả tổng 30 số chia hết 7 đầu tiên Là: "+tong;
+            }
+            ///////////////////////////////////////////////////////////////////////////////////////
+            function fizzBuzz(){
+                let i=1;
+                while(i<=100){
+                    if ((i%3==0)&&(i%5==0)){
+                        document.getElementById('ketqua').innerHTML+= 'FizzBuzz ';
+                    }
+                    else if(i%3==0){
+                        document.getElementById('ketqua').innerHTML+= 'Fizz ';
+                    }
+                    else if(i%5==0){
+                        document.getElementById('ketqua').innerHTML+= 'Buzz ';
+                    }
+                    else{
+                        document.getElementById('ketqua').innerHTML+= i+" ";
+                    }
+                  i++;
+                }
+            }
+            //////////////////////////////////////////////////////////////////////////////////////
+            function gameDoanSo(){
+                document.getElementById('ketqua').innerHTML="";
+                let i=parseInt(prompt('Nhập Số Đầu Tiên'));
+                let j=parseInt(prompt('Nhập Số Thứ hai'));
+                let sodoan=parseInt(prompt('Nhập Số Đoán'));;
+                let ketqua=0;
+                let count=1;
+                if (i>j){
+                    while((sodoan<j)||(sodoan>i)){
+                    sodoan=parseInt(prompt('Số đoán nằm ngoài khoảng đoán'));
+                    }
+                    ketqua= (Math.random()*((i-j)+j));  
+                }
+                if (i<j){
+                    while((sodoan<i)||(sodoan>j)){
+                    sodoan=parseInt(prompt('Số đoán nằm ngoài khoảng đoán'));
+                    }
+                    ketqua= Math.floor((Math.random()*((j-i)+i)));     
+                }
+                while(count<=3){
+                    if (sodoan>ketqua){
+                        sodoan=parseInt(prompt('Lớn hơn, thử lại'));
+                        count++;
+                        if(count==3){
+                            alert('You Lose!!!!');
+                            break;
+                        }
+                    }
+                    else if(sodoan<ketqua){
+                        sodoan=parseInt(prompt('Nhỏ hơn, thử lại'));
+                        count++;
+                        if(count==3){
+                            alert('You Lose!!!!');
+                            break;
+                        }
+                    }
+                    else{
+                        alert('You Win!!!!')
+                        break;
+                    }
+                }
+            }        
+   </script> 
     </body>
 </html>
