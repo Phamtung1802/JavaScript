@@ -40,21 +40,22 @@
             ///////////////////////////////////////////////////////////////////////////////////////
             function hienthifibonacci(){
                 document.getElementById('ketqua').innerHTML= "Kết quả 20 số đầu tiên Là: ";
-                let i=0;
+                let i=1;
                 let j=1;
                 let count=1;
-                while(count<=20){
-                     k=i+j;
-                     document.getElementById('ketqua').innerHTML+= k+" ";
+                document.getElementById('ketqua').innerHTML+= i+" "+j+" ";
+                while(count<=18){
+                     so=i+j;
+                     document.getElementById('ketqua').innerHTML+= so+" ";
                      j=i;
-                     i=k;
+                     i=so;
                      count++;
                 }
             }
             //////////////////////////////////////////////////////////////////////////////////////
             function timFibonaccichia5(){
                 document.getElementById('ketqua').innerHTML= "Kết quả số đầu tiên chia hết cho 5 Là: ";
-                let i=0;
+                let i=1;
                 let j=1;
                 let so;
                 while(so%5!=0){
@@ -66,19 +67,19 @@
             }
             /////////////////////////////////////////////////////////////////////////////////////
             function tong20SoDauTien(){
-                let i=0;
-                let j=1;
                 let tong=0;
-                let k;
+                let i=1;
+                let j=1;
                 let count=1;
+                document.getElementById('ketqua').innerHTML+= i+" "+j+" ";
                 while(count<=20){
-                     k=i+j;
-                     tong+=k;
+                     so=i+j;
+                     tong+=so;
                      j=i;
-                     i=k;
+                     i=so;
                      count++;
                 }
-                document.getElementById('ketqua').innerHTML= "Kết quả tổng 20 số đầu tiên Là: "+tong;
+                document.getElementById('ketqua').innerHTML= "Kết quả tổng 20 số đầu tiên Là: "+so;
             }
             ////////////////////////////////////////////////////////////////////////////////////
             function tongSoChia7(){

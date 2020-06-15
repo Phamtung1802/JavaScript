@@ -37,16 +37,16 @@
             ///////////////////////////////////////////////////////////////////////////////////////
             function hienthifibonacci(){
                 document.getElementById('ketqua').innerHTML= "Dãy số fibo Là: ";
-                let i=0;
+                let i=1;
                 let j=1;
-                let k;
                 let count=1;
                 let soluong=parseInt(document.getElementById('fibo').value);
-                while(count<=soluong){
-                     k=i+j;
-                     document.getElementById('ketqua').innerHTML+= k+" ";
+                document.getElementById('ketqua').innerHTML+= i+" "+j+" ";
+                while(count<=(soluong-2)){
+                     so=i+j;
+                     document.getElementById('ketqua').innerHTML+= so+" ";
                      j=i;
-                     i=k;
+                     i=so;
                      count++;
                 }
             }
