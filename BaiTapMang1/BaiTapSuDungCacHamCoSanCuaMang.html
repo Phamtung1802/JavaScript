@@ -10,10 +10,12 @@
 </head>
 
 
+
 <body>
     <input type="text" id="txtValue"></input>
     <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"></input>
-    <input type="button" id="btnDisplay" value="Display" onclick="display_array();"></input>
+    <input type="button" id="btnDisplay" value="Display" onclick="display_array();"></input><br><br>
+    <input type="button" id="btnAdd" value="an de nhap tach chuoi so chan" onclick="promptarr();"></input>
     <div id="result"></div>
     <script>
         let x=0;
@@ -23,14 +25,34 @@
         alert("Element: " + arr[x] + " Added at index " + x);
         x++;
         document.getElementById('txtValue').value="";
-     
+
         }
         function display_array() {
-            let e = "<hr/>";
-            for (let i = 0; i < arr.length; i++) {
-            e+= "Element " + i + " = " + arr[i] + "<br/>";
+        let e = "<hr/>";
+        for (let i = 0; i < arr.length; i++) {
+        e+= "Element " + i + " = " + arr[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+        }
+        function promptarr(){
+            let a=prompt('Nhap so',);
+            let b=a.toString(a);
+            let x=0;
+            let result=[];
+            console.log(b);
+            for(x=0;x<b.length;x++){
+                if ((b[x]%2===0)){
+                    result.push(b[x],"-");
+                }
+                else{
+                result.push(b[x]);
+                }
             }
-             document.getElementById("result").innerHTML = e;
+            if (result[x]==="-"){
+            result.pop();    
+            }
+            document.getElementById("result").innerHTML= result.join("").toString();
+           
         }
         
     </script>
