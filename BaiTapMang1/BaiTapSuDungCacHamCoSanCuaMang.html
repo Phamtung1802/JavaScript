@@ -15,7 +15,8 @@
     <input type="text" id="txtValue"></input>
     <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"></input>
     <input type="button" id="btnDisplay" value="Display" onclick="display_array();"></input><br><br>
-    <input type="button" id="btnAdd" value="an de nhap tach chuoi so chan" onclick="promptarr();"></input>
+    <input type="button" id="btnAdd" value="an de nhap tach chuoi so chan" onclick="promptarr();"></input><br><br>
+    <input type="button" id="btnAdd" value="an de nhap chuoi doi kieu chu" onclick="chuyenchu();"></input>
     <div id="result"></div>
     <script>
         let x=0;
@@ -34,10 +35,10 @@
         }
         document.getElementById("result").innerHTML = e;
         }
+
         function promptarr(){
             let a=prompt('Nhap so',);
             let b=a.toString(a);
-<<<<<<< HEAD
             let x=0;
             let result=[];
             console.log(b);
@@ -53,23 +54,32 @@
             result.pop();    
             }
             document.getElementById("result").innerHTML= result.join("").toString();
-           
-=======
+        }
+
+        function chuyenchu(){
+            let a=prompt('Nhap Chuoi Ky Tu',);
+            let b=a.toString(a);
+            let x=0;
+            let UPPER="QWERTYUIOPASDFGHJKLZXCVBNM"
+            let LOWER="qwertyuiopasdfghjklzxcvbnm"
             let result=[];
-            let x=1;
-            console.log(b);
-            for(x=1;x<b.length;x++){
-                if (b[x-1]%2===0){
-                    result.push(b[x-1],"-");
-                }
-                else{
-                result.push(b[x-1]);
+            for (x=0; x<b.length;x++){
+                result.push(b[x]);
+            }
+            console.log(result);
+             for(x=0;x<result.length;x++){
+               for(let i=0; i<UPPER.length;i++){
+                    if (result[x]==UPPER[i]){
+                        result[x]=result[x].toLowerCase();
+                    }
+                    else if (result[x]==LOWER[i]){
+                        result[x]=result[x].toUpperCase();
+                    }
                 }
             }
-            document.getElementById("result").innerHTML= result.join("").toString();    
->>>>>>> ba19cb260c636f016d3c9d8124628d834121407c
+            document.getElementById("result").innerHTML= result.join("").toString();      
+            //The Quick Brown Fox Jumps Over The Lazy Dog
         }
-        
     </script>
 </body>
 
