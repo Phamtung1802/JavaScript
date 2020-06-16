@@ -37,6 +37,7 @@
         function promptarr(){
             let a=prompt('Nhap so',);
             let b=a.toString(a);
+<<<<<<< HEAD
             let x=0;
             let result=[];
             console.log(b);
@@ -53,6 +54,20 @@
             }
             document.getElementById("result").innerHTML= result.join("").toString();
            
+=======
+            let result=[];
+            let x=1;
+            console.log(b);
+            for(x=1;x<b.length;x++){
+                if (b[x-1]%2===0){
+                    result.push(b[x-1],"-");
+                }
+                else{
+                result.push(b[x-1]);
+                }
+            }
+            document.getElementById("result").innerHTML= result.join("").toString();    
+>>>>>>> ba19cb260c636f016d3c9d8124628d834121407c
         }
         
     </script>
