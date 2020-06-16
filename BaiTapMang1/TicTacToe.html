@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>JS Bin</title>
+    <style>
+        body {padding-top:50px}
+     </style>
+    <script>
+       
+        //var X=[];
+        //let posX=0, posY=0;
+        //console.log("posX "+posX+" posY "+posY+" X "+typeof(X)+" Y "+typeof(Y));
+        
+        
+        function tracuu(){    
+            var matrix = new Array(10,10);    
+            for (var row = 0; row < matrix.length; row++) {
+                for (var column = 0; column < matrix[row].length; column++) {
+                matrix[row][column] = Math.floor((Math.random() * 100) + 1);
+                }
+            }
+            console.log(matrix)
+        }
+    </script>
+</head>
+
+
+
+<body>
+    <input type="text" id="txtValue">
+    <input type="button" id="btnDisplay" value="Tra Cứu" onclick="tracuu();"><br><br>
+    <div id="result"></div>
+  
+
+
+
+</body></html>
