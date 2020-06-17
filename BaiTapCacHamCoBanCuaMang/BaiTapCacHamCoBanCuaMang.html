@@ -14,9 +14,6 @@
 <body>
     <div id="result"></div>
     <script>
-        let c=[];
-        let a=[];
-        let b=[];
         let str=[];
         function Khoitaomang(str,soPhantu=prompt("nhap so phan tu")){
             for (let i=0; i<soPhantu; i++){
@@ -100,11 +97,13 @@
 
         Khoitaomang(str);
         document.write("mang khoi tao la "+str+" <br>");
-        //xepNhoDenLon();
-        //xepLonDenNho();
-        //kiemTraPhanTu();
-        //layRaPhantu();
-        //themPhanTuVaoDauMang();
+        xepNhoDenLon();
+        document.write("mang sau khi xep nho den lon la "+str+" <br>");
+        xepLonDenNho();
+        document.write("mang sau khi sep lon den nho la "+str+" <br>");
+        kiemTraPhanTu();
+        layRaPhantu();
+        themPhanTuVaoDauMang();
         themPhanTuVaoViTriBatKi();
         document.write("mang sau khi them vao la "+str+" <br>");
 
