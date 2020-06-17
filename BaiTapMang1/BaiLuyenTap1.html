@@ -22,9 +22,9 @@
             let lonhon10=[];
             let j=0;
             for (let i=0; i<soPhantu; i++){
-                str[i]=(Math.floor(Math.random()*100))+(Math.floor(Math.random()*(-100)))+1;
+                str[i]=(Math.floor(Math.random()*100))+(Math.floor(Math.random()*(-100)))+1; ///tao ra phan tu tu -100 den 100
             }
-            for (let i=0; i<soPhantu; i++){
+            for (let i=0; i<soPhantu; i++){                                                 ////tim so lon hon 10 
                 if(str[i]>=soPhantu){
                     lonhon10[j]=str[i]
                     j++
@@ -104,15 +104,15 @@
             let V=+prompt('nhap so V:');
             i= kiemTraV(V);
             let c=i;
-            if(i<str.length){             // kiem tra xem so V co trong mang khong
-                for(;i<str.length;i++){   //chay tu i den cuoi mang
-                    c=str[i+1];            // gan de luu gia tri str[i+1]
-                    if(i+1<str.length){   // phai co dieu kien i+1<str.length vi neu i<str.length thi lenh ben duoi se cong them 1 phan tu vao str, tao vong lap vo han
-                        str[i+1]=str[i]; 
-                        str[i]=c;
-                    }
+            if(i<str.length){               // kiem tra xem so V co trong mang khong
+                for(;i+1<str.length;i++){   //chay tu i den cuoi mang
+                    c=str[i+1];             // gan de luu gia tri str[i+1]
+                                            // phai co dieu kien i+1<str.length vi neu i<str.length thi lenh ben duoi se cong them 1 phan tu vao str, tao vong lap vo han
+                    str[i+1]=str[i]; 
+                    str[i]=c;
+                    
                 }
-                str.pop();
+                str.length=str.length-1;
             }  
               console.log(str)
         }
@@ -124,18 +124,17 @@
             let max=strXep[0];
             let sauKhiXep=[];
             for(i=0;i<strXep.length;){
-                for ( j=0, vitri=0; j<strXep.length;j++){//tim gia tri max
-                    if (max<strXep[j]) {           // luu y khi chay het vong lap phai tra vitri ve 0, 
-                        max=strXep[j];             // boi vi lan sau neu max=0 thi vong lap khong chay nua, vitri se khong duoc gan gia tri moi
+                for ( j=0, vitri=0; j<strXep.length;j++){   //tim gia tri max
+                    if (max<strXep[j]) {                    // luu y khi chay het vong lap phai tra vitri=0, 
+                        max=strXep[j];                      // boi vi lan sau neu max=0 thi vong lap chay sai, vitri se khong duoc gan gia tri moi
                         vitri=j;                   
                     }
                 }
                 for(;vitri+1<strXep.length;vitri++){ 
                     c=strXep[vitri+1];
-                    if(vitri+1<strXep.length){     //sau vong nay se xep max vi tri dau tien cua mang            
-                        strXep[vitri+1]=strXep[vitri];
-                        strXep[vitri]=c;
-                    }
+                    strXep[vitri+1]=strXep[vitri];
+                    strXep[vitri]=c;
+                    
                 }
             sauKhiXep[x]=max;
             x++;
@@ -143,14 +142,15 @@
             max=strXep[0];    
             }
             str=sauKhiXep
+            console.log(str)
         }
-        //Khoitaomang(str);
+        Khoitaomang(str);
         //timMax();
         //timTrungBinh();
         //daoNguoc();
         //demSoNguyenAm();
         //kiemTraV();
-        //sapXepGiamDan();
+        sapXepGiamDan();
         //kiemTravaTachV();
         /*Khoitaomang(a);
         Khoitaomang(b);
