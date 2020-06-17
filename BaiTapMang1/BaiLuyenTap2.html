@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <style>
+        body {padding-top:50px}
+     </style>
+</head>
+
+
+
+<body>
+    <div id="result"></div>
+    <script>
+        let c=[];
+        let a=[];
+        let b=[];
+        let str=[]
+        function khoiTaoMang2chieuNhanh(){
+            for (var i=0;i<5;i++){
+                str[i]=[];
+                for (var j=0;j<4;j++){
+                    str[i][j]=(Math.floor(Math.random()*100))+(Math.floor(Math.random()*(-100)))+1;
+                }
+            }
+            console.log(str);
+        }
+        function khoiTaoMang2chieuPrompt(){
+            for (let i=0;i<5;i++){
+                str[i]=[];
+                for (let j=0;j<4;j++){
+                    str[i][j]=prompt('nhap phan tu hang thu '+i+' cot thu '+j);
+                }
+            }
+            console.log(str);
+        }
+
+        function daoNguoc(){
+            a.length=prompt('nhap so luong ky tu can cho vao mang');
+            for(let i=0;i<a.length;i++){
+                a[i]=prompt('nhap phan tu thu '+i);
+            }
+            console.log('mang truoc khi dao nguoc la '+a);
+            let first=0;
+            let last=a.length-1;
+            while(first<last){
+                let X=a[first];
+                a[first]=a[last];
+                a[last]=X;
+                first++;
+                last--;
+            }
+            console.log('mang sau khi dao nguoc la '+a);
+            ChuoiSauDao=a.join("");
+            console.log(ChuoiSauDao);
+        }
+        function demSoKyTuSo(){
+            a.length=prompt('nhap so luong ky tu can cho vao mang');
+            for(let i=0;i<a.length;i++){
+                a[i]=prompt('nhap phan tu thu '+i);
+            }
+            console.log(a);
+            for(i=0, count=0;i<a.length;i++){
+                console.log(count);
+            }
+           document.write("so phan tu so la: "+count);
+           console.log(a);
+        }
+
+        function demSoTuTrongChuoi(){
+            let kytu="";
+            let chuoiTu=[];
+            let x=0;
+            let goptu=[]
+            let result=[]
+            chuoi=prompt('nhap chuoi muon dem so tu');
+            for(let i=0;i<chuoi.length;i++){
+                chuoiTu.push(chuoi[i]);
+            }
+            for(let i=0; i<chuoiTu.length;i++){
+                goptu.push(chuoiTu[i]);
+                if(chuoiTu[i]==" "){
+                   kytu=goptu.toString();
+                   result.push(kytu);
+                }
+            }
+            kytu=goptu.toString();
+            result.push(kytu);
+            alert('chuoi co '+result.length+' tu')
+
+        }
+
+        //khoiTaoMang2chieuPrompt();
+        //daoNguoc();
+        demSoKyTuSo(); 
+        //demSoTuTrongChuoi();
+
+
+
+    </script>
+</body>
+
+</html>
