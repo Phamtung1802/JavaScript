@@ -35,9 +35,8 @@
             }
             let p=0;
             for(row=0; row<matrix.length; row++){
-                let str=['k','b','c','d','e','f','g','h','i']
                 for(column=0; column<matrix[row].length;column++){
-                    document.getElementById('result').innerHTML+='<span id='+str[p]+'" style="font-size:50pt" '+'onclick="change(this.id);">'+matrix[row][column]+'</span>'
+                    document.getElementById('result').innerHTML+='<span id='+ matrix[row][column]+'" style="font-size:50pt" '+'onclick="change(this.id);">'+'(.)'+'</span>'
                     p++;
                 }
                 document.getElementById('result').innerHTML+='<br>'   
