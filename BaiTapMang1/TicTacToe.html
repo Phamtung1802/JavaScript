@@ -30,7 +30,7 @@
             for (var row = 0; row < matrix.length; row++) {
                 matrix[row]=new Array(3);
                 for (var column = 0; column < matrix[row].length; column++) {
-                matrix[row][column] = '(.)';
+                matrix[row][column] = row.toString()+column.toString();
                 }
             }
             let p=0;
