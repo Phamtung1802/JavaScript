@@ -14,7 +14,7 @@
 <body>
     <div id="result"></div>
     <script>
-        let c=[]
+        let c=[];
         let a=[];
         let b=[];
         let str=[];
@@ -31,14 +31,13 @@
                 }
                 
             }
-            //console.log('mang khoi tao la '+str);
-            //console.log('mang cac so lon hon 10 la '+lonhon10);
+            console.log('mang khoi tao la '+str);
+            console.log('mang cac so lon hon 10 la '+lonhon10);
         }
 
         function timMax(){
             let max=str[0];
-            let vitriMax=0;
-            for(let i=0; i<str.length; i++){
+            for(let i=0, vitriMax=0; i<str.length; i++){
                 if(max<str[i]){
                     max=str[i];
                     vitriMax=i;
@@ -124,24 +123,24 @@
             let strXep=str;
             let max=strXep[0];
             let sauKhiXep=[];
-                for(i=0;i<strXep.length;){
-                    for ( j=0, vitri=0; j<strXep.length;j++){//tim gia tri max
-                        if (max<strXep[j]) {           // luu y khi chay het vong lap phai tra vitri ve 0, 
-                            max=strXep[j];             // boi vi lan sau neu max=0 thi vong lap khong chay nua, vitri se khong duoc gan gia tri moi
-                            vitri=j;                   
-                        }
+            for(i=0;i<strXep.length;){
+                for ( j=0, vitri=0; j<strXep.length;j++){//tim gia tri max
+                    if (max<strXep[j]) {           // luu y khi chay het vong lap phai tra vitri ve 0, 
+                        max=strXep[j];             // boi vi lan sau neu max=0 thi vong lap khong chay nua, vitri se khong duoc gan gia tri moi
+                        vitri=j;                   
                     }
-                    for(;vitri+1<strXep.length;vitri++){ 
-                        c=strXep[vitri+1];
-                        if(vitri+1<strXep.length){     //sau vong nay se xep max vi tri dau tien cua mang            
-                            strXep[vitri+1]=strXep[vitri];
-                            strXep[vitri]=c;
-                        }
+                }
+                for(;vitri+1<strXep.length;vitri++){ 
+                    c=strXep[vitri+1];
+                    if(vitri+1<strXep.length){     //sau vong nay se xep max vi tri dau tien cua mang            
+                        strXep[vitri+1]=strXep[vitri];
+                        strXep[vitri]=c;
                     }
-                sauKhiXep[x]=max;
-                x++;
-                strXep.pop();
-                max=strXep[0];    
+                }
+            sauKhiXep[x]=max;
+            x++;
+            strXep.pop();
+            max=strXep[0];    
             }
             str=sauKhiXep
         }
@@ -153,12 +152,10 @@
         //kiemTraV();
         //sapXepGiamDan();
         //kiemTravaTachV();
-        //Khoitaomang(a);
-        //Khoitaomang(b);
-        Khoitaomang(a);
+        /*Khoitaomang(a);
         Khoitaomang(b);
         c=a.concat(b)
-        console.log(c);
+        console.log(c);*/
 
      
     </script>
