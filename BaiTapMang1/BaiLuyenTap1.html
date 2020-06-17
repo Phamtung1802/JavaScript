@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <style>
+        body {padding-top:50px}
+     </style>
+</head>
+
+
+
+<body>
+    <div id="result"></div>
+    <script>
+        let c=[]
+        let a=[];
+        let b=[];
+        let str=[];
+        function Khoitaomang(str,soPhantu=prompt("nhap so phan tu")){
+            let lonhon10=[];
+            let j=0;
+            for (let i=0; i<soPhantu; i++){
+                str[i]=(Math.floor(Math.random()*100))+(Math.floor(Math.random()*(-100)))+1;
+            }
+            for (let i=0; i<soPhantu; i++){
+                if(str[i]>=soPhantu){
+                    lonhon10[j]=str[i]
+                    j++
+                }
+                
+            }
+            //console.log('mang khoi tao la '+str);
+            //console.log('mang cac so lon hon 10 la '+lonhon10);
+        }
+
+        function timMax(){
+            let max=str[0];
+            let vitriMax=0;
+            for(let i=0; i<str.length; i++){
+                if(max<str[i]){
+                    max=str[i];
+                    vitriMax=i;
+                }
+            }
+            document.getElementById('result').innerHTML+='<br> Max la '+max;
+            document.getElementById('result').innerHTML+='<br> Vi Tri Max La: '+vitriMax;
+            return max;
+        }
+
+        function timTrungBinh(){
+            let tong=0;
+            for(let i=0; i<str.length; i++){
+                tong+=str[i];
+            }
+            let trungBinh=tong/str.length;
+            document.getElementById('result').innerHTML+='<br> Trung Binh La: '+trungBinh;
+            return trungBinh;
+        }
+
+        function daoNguoc(){
+            let first=0;
+            let last=str.length-1; 
+            while(first<last){
+                let b=str[first];
+                str[first]=str[last];
+                str[last]=b;
+                first++;
+                last--;
+            }
+            console.log('mang sau khi dao nguoc la '+str);
+        }
+
+        function demSoNguyenAm(){
+            let mangSoAm=[]
+            let j=0;
+            for(let i=0; i<str.length; i++){
+                if(str[i]<0){
+                    mangSoAm[j]=str[i]
+                     j++
+                }
+            }
+            console.log('mang so nguyen am la '+mangSoAm);
+            return mangSoAm;
+        }
+
+        function kiemTraV(V){
+            let vitri=0;
+            let i=0;
+            for(; i<str.length; i++){
+                if(V==str[i]){
+                    alert('V is in the Array');
+                    break;
+                }
+            }
+            if(i==str.length){
+                alert('V is not in the Array')
+            }
+            return i;
+        }
+
+        function kiemTravaTachV(){
+            let i;
+            let V=+prompt('nhap so V:');
+            i= kiemTraV(V);
+            let c=i;
+            if(i<str.length){             // kiem tra xem so V co trong mang khong
+                for(;i<str.length;i++){   //chay tu i den cuoi mang
+                    c=str[i+1];            // gan de luu gia tri str[i+1]
+                    if(i+1<str.length){   // phai co dieu kien i+1<str.length vi neu i<str.length thi lenh ben duoi se cong them 1 phan tu vao str, tao vong lap vo han
+                        str[i+1]=str[i]; 
+                        str[i]=c;
+                    }
+                }
+                str.pop();
+            }  
+              console.log(str)
+        }
+        function sapXepGiamDan(){
+            let x=0
+            let i=0;
+            let vitri=0;
+            let strXep=str;
+            let max=strXep[0];
+            let sauKhiXep=[];
+                for(i=0;i<strXep.length;){
+                    for ( j=0, vitri=0; j<strXep.length;j++){//tim gia tri max
+                        if (max<strXep[j]) {           // luu y khi chay het vong lap phai tra vitri ve 0, 
+                            max=strXep[j];             // boi vi lan sau neu max=0 thi vong lap khong chay nua, vitri se khong duoc gan gia tri moi
+                            vitri=j;                   
+                        }
+                    }
+                    for(;vitri+1<strXep.length;vitri++){ 
+                        c=strXep[vitri+1];
+                        if(vitri+1<strXep.length){     //sau vong nay se xep max vi tri dau tien cua mang            
+                            strXep[vitri+1]=strXep[vitri];
+                            strXep[vitri]=c;
+                        }
+                    }
+                sauKhiXep[x]=max;
+                x++;
+                strXep.pop();
+                max=strXep[0];    
+            }
+            str=sauKhiXep
+        }
+        //Khoitaomang(str);
+        //timMax();
+        //timTrungBinh();
+        //daoNguoc();
+        //demSoNguyenAm();
+        //kiemTraV();
+        //sapXepGiamDan();
+        //kiemTravaTachV();
+        //Khoitaomang(a);
+        //Khoitaomang(b);
+        Khoitaomang(a);
+        Khoitaomang(b);
+        c=a.concat(b)
+        console.log(c);
+
+     
+    </script>
+</body>
+
+</html>
