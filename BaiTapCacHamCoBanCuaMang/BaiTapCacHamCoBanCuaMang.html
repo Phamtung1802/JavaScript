@@ -15,6 +15,7 @@
     <div id="result"></div>
     <script>
         let str=[];
+       
         function Khoitaomang(str,soPhantu=prompt("nhap so phan tu")){
             for (let i=0; i<soPhantu; i++){
                 str[i]=(Math.floor(Math.random()*100))+(Math.floor(Math.random()*(-100)))+1; ///tao ra phan tu tu -100 den 100
@@ -46,8 +47,7 @@
             }
         document.write("xep lon den nho "+str+" <br>");
         }
-        function kiemTraPhanTu(){
-            let phanTu=prompt("nhap phan tu muon kiem tra ");
+        function kiemTraPhanTu(str){
             for(let i=0; i<str.length;i++){
                 if(str[i]==phanTu){
                     document.write('Phan tu nhap vao xuat hien trong mang'+" <br>")
@@ -57,8 +57,8 @@
             document.write('Phan tu nhap khong xuat hien trong mang'+" <br>")
             return (-1);
         }
-        function layRaPhantu(){
-            let i=kiemTraPhanTu();
+        function layRaPhantu(str){
+            let i=kiemTraPhanTu(str);
             if(i>0){
                 for(;i+1<str.length;i++){
                     b=str[i];
@@ -94,6 +94,16 @@
                 str[k]=b
             }
         }
+        function xoaTatCaCacPhanTuTimDuoc(){
+            Check=kiemTraPhanTu(str);
+            while(Check>=0){
+                for(let i=Check;i<str.length;i++){
+                    str[i]=str[i+1];
+                }
+                str.length-=1;
+                Check=kiemTraPhanTu(str);
+            }
+        }
 
         Khoitaomang(str);
         document.write("mang khoi tao la "+str+" <br>");
@@ -101,11 +111,14 @@
         document.write("mang sau khi xep nho den lon la "+str+" <br>");
         xepLonDenNho();
         document.write("mang sau khi sep lon den nho la "+str+" <br>");
-        kiemTraPhanTu();
-        layRaPhantu();
-        themPhanTuVaoDauMang();
+        //kiemTraPhanTu();
+        //layRaPhantu(str);
+        //themPhanTuVaoDauMang();
         themPhanTuVaoViTriBatKi();
         document.write("mang sau khi them vao la "+str+" <br>");
+        phanTu=prompt("nhap phan tu muon kiem tra va bo di ");
+        xoaTatCaCacPhanTuTimDuoc();
+        document.write("mang sau khi bo di la "+str+" <br>");
 
 
      
