@@ -21,24 +21,29 @@
         function KiemTra90(){
             if(X.length>=3||O.length>=3){
                 for (let i=0;i<win.length;i++){
-                    for(let j=0,k=0;j<X.length&&k<3;j++,k++){
-                        if(X[j]==win[i][k]){
-                            xWin++;
-                        }
-                        if(xWin==3){
-                            alert('X Win');
-                            location.reload(); 
+                    for(let j=0;j<X.length;j++){
+                        for (let k=0; k<3;k++){
+                            if(X[j]==win[i][k]){
+                                xWin++;
+                            }
+                            if(xWin==3){
+                                alert('X Win');
+                                location.reload(); 
+                            }
                         }
                     }
                     xWin=0;
-                    for(let j=0,k=0;j<X.length&&k<3;j++,k++){
-                        if(O[j]==win[i][k]){
-                            oWin++;
-                        }
-                        if(oWin==3){
-                            alert('O Win');
-                            location.reload(); 
-                        }
+                    
+                    for(let j=0;j<X.length;j++){
+                        for (let k=0; k<3;k++){
+                            if(O[j]==win[i][k]){
+                                oWin++;
+                            }
+                            if(oWin==3){
+                                alert('O Win');
+                                location.reload(); 
+                            }
+                        }    
                     }
                     oWin=0;
                 }
