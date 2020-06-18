@@ -15,15 +15,44 @@
     <input type="button" id="btnDisplay" value="Play" onclick="choi();" style="margin:0 auto; width:200px"><br><br>
     <div id="result" style="margin:0 auto; width:50%;"></div>
     <script>
-        let win=[['00','01','02'],['00','11','22'],['00','10','20'],['01','11','21'],['02','12','22'],['10','11','12'],['20','21','22'],['20','11','02']]
-        for (let i=0;i<win.length;i++){
-            win[i].sort();
-        }
-        win.sort();
-        console.log(win[0].toString());
         let a=2;
-        let X= new Array()
-        let O= new Array()
+        let xWin=0;
+        let oWin=0;
+        let X= new Array();
+        let O= new Array();
+        let win=[['00"','01"','02"'],['00"','11"','22"'],['00"','10"','20"'],['01"','11"','21"'],['02"','12"','22"'],['10"','11"','12"'],['20"','21"','22"'],['20"','11"','02"']]
+        function KiemTra90(){
+            if(X.length>=3||O.length>=3){
+                for (let i=0;i<win.length;i++){
+                    for(let j=0,k=0;j<X.length&&k<3;j++,k++){
+                        if(X[j]==win[i][k]){
+                            xWin++;
+                            console.log("Xwin "+xWin)
+                            console.log("X[j] "+X[j])
+                            console.log(X)
+                        }
+                        if(xWin==3){
+                            alert('X Win');
+                            location.reload(); 
+                        }
+                    }
+                    xWin=0;
+                    for(let j=0,k=0;j<X.length&&k<3;j++,k++){
+                        if(O[j]==win[i][k]){
+                            oWin++;
+                            console.log("Owin "+oWin)
+                            console.log("O[j] "+O[j])
+                            console.log(O)
+                        }
+                        if(oWin==3){
+                            alert('O Win');
+                            location.reload(); 
+                        }
+                    }
+                    oWin=0;
+                }
+            }    
+        }
         function choi(){
             document.getElementById('result').innerHTML="";    
             var matrix = new Array(3);
@@ -36,7 +65,7 @@
             let p=0;
             for(row=0; row<matrix.length; row++){
                 for(column=0; column<matrix[row].length;column++){
-                    document.getElementById('result').innerHTML+='<span id='+ matrix[row][column]+'" style="font-size:50pt" '+'onclick="change(this.id);">'+'(.)'+'</span>'
+                    document.getElementById('result').innerHTML+='<span id='+ matrix[row][column]+'" '+'style="font-size:50pt" '+'onclick="change(this.id);">'+'(.)'+'</span>'
                     p++;
                 }
                 document.getElementById('result').innerHTML+='<br>'   
@@ -44,22 +73,24 @@
         }
 
         function change(clicked_id){
-            console.log(a);
             celltic=document.getElementById(clicked_id).innerHTML
             if((celltic=="(.)")){
                 if(a%2==0){
                 document.getElementById(clicked_id).innerHTML="X";
+                clicked_id.length-=2
+                X[X.length]=clicked_id
+                KiemTra90()
                 a=1;
                 }
                 else{
                 document.getElementById(clicked_id).innerHTML="O";
+                clicked_id.length-=2
+                O[O.length]=clicked_id
                 a=2;
+                KiemTra90()
                 }
             }
-        }
-            
- 
-            
+        }       
     </script>
 
 
