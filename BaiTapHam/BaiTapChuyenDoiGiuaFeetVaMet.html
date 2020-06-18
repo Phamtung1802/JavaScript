@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <title>Scoping Example</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    
+    </script>
+</head>
+<body>
+    <input type="number" id="giaTri" name="giaTri" placeholder="nhap gia tri" value="0">
+    <button id="fSangM" onclick=" laygiatri(); hienThiFeetSangMet(x);">Feet Sang M</button>
+    <button id="mSangF" onclick="laygiatri(); hienThiMetSangFeet(x); ">Met Sang Feet</button>
+    <script type="text/javascript">
+        let x;
+        function laygiatri(){
+            x=parseInt(document.getElementById('giaTri').value)
+        }
+        function chuyenDoiFeetSangMet(f) {
+            m=f*3.279;
+            return m;
+        }
+        function chuyenDoiMetSangFeet(m) {
+            f=m*0.305;
+            return f;
+        }
+        function hienThiMetSangFeet(){
+            document.write(chuyenDoiMetSangFeet(x)+" Feet <br>")
+        }
+        function hienThiFeetSangMet(){
+            document.write(chuyenDoiFeetSangMet(x)+" M <br>")
+        }
+       
+       
+        
+    </script>
+</body>
+</html>
