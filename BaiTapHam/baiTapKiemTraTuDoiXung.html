@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <title>Scoping Example</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function tachChuoiThanhMang(chuoi){
+            let mangSauTach=[];
+            for(i=0;i<chuoi.length;i++){
+                mangSauTach[i]=chuoi[i];
+            }
+            return mangSauTach
+        }
+        function isPalindrome(){
+            let countdown=mang_n.length-1;
+            if(countdown>=2){
+                if(mang_n[0]==mang_n[mang_n.length-1]){
+                    mang_n.pop();
+                    mang_n.shift();
+                    isPalindrome()
+                }
+                else{
+                    alert(n+' khong phai la Palindrome ')
+                    return;
+                }
+            }
+            if(countdown<2){
+                alert(n+' la Palindrome ')
+                return
+            }
+        }
+        let n=prompt('nhap vao tu muon kiem tra');
+        if(n.length<3){
+            n=prompt("chuoi muon kiem tra it nhat phai co 3 ky tu")
+        }
+        let mang_n=tachChuoiThanhMang(n);
+        isPalindrome();
+    </script>
+</head>
+<body>
+    <script>
+    </script>
+</body>
+</html>
