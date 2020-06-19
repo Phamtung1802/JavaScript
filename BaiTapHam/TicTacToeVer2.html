@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <title>Scoping Example</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    </script>
+    <style>
+        table {
+            width:50%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 1px black solid;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px black solid;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        let oBanCo=[];
+        let flag="X";
+
+        function drawBoard(size){
+            let string="<table>";
+            for(i=0;i<size;i++){
+                oBanCo[i]=[];
+                string+="<tr>"
+                for(j=0;j<size;j++){
+                    string+='<td onclick="danhCo(this,'+i+','+j+');">&nbsp;</td>'
+                    oBanCo[i][j]=-1;
+                }
+                string+="</tr>"
+            }
+            string+="</table>"
+            document.write(string);
+        }
+
+        function danhCo(element,posX,posY){
+            if(element.innerHTML=="&nbsp;")
+            element.innerHTML=flag;
+            oBanCo[posX][posY]=flag;
+            if(flag=="X"){
+            flag="O";
+            }
+            else if(flag=="O"){
+                flag="X";
+            }
+           console.log(oBanCo[posX][posY])
+        }
+        drawBoard(20);
+        console.log(oBanCo);
+    </script>
+</body>
+</html>
