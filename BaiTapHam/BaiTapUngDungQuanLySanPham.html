@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <title>Scoping Example</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+      
+    </script>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: tahoma;
+        }
+        .mainbox {
+            display: table;
+            width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        button {
+            background-color: green;
+            color:white;
+            border-radius: 5px;
+            border: none;
+            padding:3px;
+            height: 30px;
+            width:70px;
+        }
+        .addNewProduct {
+            width:50%;
+        }
+        .addprod {
+            width:100%;
+            background-color: #dad6d6;
+            border-radius: 4px;
+            text-align: left;
+            padding-top:3%;
+            padding-bottom:3%;
+            padding-left:3%;
+        }
+        input {
+            border:none;
+            border-radius: 3px;
+            width:60%;
+            height:30px;
+        }
+        .ProductList {
+            width:100%;
+
+        }
+        table{
+            border:none;
+            width:100%;
+        }
+        table:nth-child(odd){
+            background-color: #dad6d6;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mainbox">
+        <div class="addNewProduct">
+            <div style="margin:5px;"><h4>&nbsp;Add New Product</h4></div>
+            <div class="addprod">
+            <input type="text" id="nhapSanPham" placeholder=" New Product">    
+            <button onclick="addProduct()">Add</button>
+            </div>
+        </div>
+        <div class="ProductList">
+            <div style="margin:5px;"><h4>Display All Product</h4></div>
+            <table id="bang">
+                <tr>
+                    <td style="font-weight: bold; width:50%">Product Name</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td id="soluongsanpham">&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+       
+        function addProduct(){
+            let a=document.getElementById('nhapSanPham').value;
+            let themdong="<tr id="+a+"1><td>"+a+"</td>"+'<td><button onclick="edit()">Edit</button></td><td><button id='+a+'" onclick="delete()">Delete</button></td><td>&nbsp;</td>'
+            document.getElementById('bang').innerHTML+=themdong;
+        }
+        function deleteProduct(){
+            let a=document.getElementById(a).value;
+            let xoadong="<tr id="+a+"><td>"+a+"</td>"+'<td><button onclick="edit()">Edit</button></td><td><button onclick="delete()">Delete</button></td><td>&nbsp;</td>'
+            document.getElementById('bang').innerHTML-=xoadong;
+        }
+        
+    </script>
+</body>
+</html>
