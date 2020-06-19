@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+    <title>Scoping Example</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        let mangKyTuSo=["0","1","2","3","4","5","6","7","8","9"]
+        function tinhBinhPhuong(){
+            let so=prompt('nhap so muon tinh binh phuong')
+            ketQua=so*so;
+            alert("binh phuong cua "+so+" la "+ ketQua);
+            return ketQua;
+        }
+        function tinhDienTichChuViHinhTron(){
+            let so=prompt('nhap ban kinh hinh tron')
+            let hinhTron=[]
+            ChuVi=so*2*3.14;
+            hinhTron[hinhTron.length]=ChuVi;
+            dienTich=so*so*3.14;
+            hinhTron[hinhTron.length]=dienTich;
+            alert("Chu vi cua hinh tron la "+ ChuVi);
+            alert("Dien Tich cua hinh tron la "+ dienTich);
+            return hinhTron;
+        }
+        function tinhGiaiThua(){
+            let giaiThua=1;
+            let so=prompt('nhap so muon tinh giai thua')
+            for(i=2;i<=so;i++){
+                giaiThua*=i;
+            }
+            alert("Giai thua cua "+so+" la "+ giaiThua);
+            return giaiThua;
+        }
+        function tachChuoiThanhMang(chuoi){
+            let mangSauTach=[];
+            for(i=0;i<chuoi.length;i++){
+                mangSauTach[i]=chuoi[i];
+            }
+            return mangSauTach
+        }
+        function kiemTraVaThongBao(){
+            let chuoi=prompt('nhap chuoi ky tu muon kiem tra');
+            let chuoiTach=tachChuoiThanhMang(chuoi);
+            let count=0
+            for(i=0;i<chuoiTach.length;i++){
+                for(j=0;j<mangKyTuSo.length;j++){
+                    if(chuoiTach[i]==mangKyTuSo[j]){
+                    count++;
+                    }
+                }
+            }
+            if (count==chuoiTach.length){
+                alert("la so");
+                return true;
+            }
+            else{
+                alert("khong phai so");
+                return false;
+            }
+        }
+        function nhapVaonSoNguyen(n){
+            let mangnsoNguyen=[];
+            for(let i=0;i<n;i++){
+                a=+prompt('nhap vao so nguyen thu '+(i+1));
+                mangnsoNguyen[i]=a;;
+            }
+            return mangnsoNguyen;
+        }
+        function kiemTraSoNguyen(){
+            let n=prompt('nhap so luong so nguyen muon nhap ');
+            let mang=nhapVaonSoNguyen(n);
+            for(i=0;i<mang.length;i++){
+                for(j=i;j<mang.length;j++){
+                    if(mang[i]>mang[j]){
+                        let b=mang[i];
+                        mang[i]=mang[j];
+                        mang[j]=b;
+                    }
+                }
+            }
+            alert("cac so sau khi sap xep "+mang);
+            return mang[0];
+        }
+        function kiemTraNguyenDuong(){
+            let a=+prompt("nhap vao so");
+            if(a>=0){
+                alert(a+" la so nguyen duong");
+                return true;
+            }
+            alert(a+' khong phai so nguyen duong')
+            return false;
+        }
+        function kiemTraVaDoiCho2soNguyen(){
+            let haiSo=nhapVaonSoNguyen(2);
+            a=haiSo[0];
+            b=haiSo[1];
+            alert("hai so truoc khi dao la: "+"so 1= "+a+" so 2= "+b )
+            c=a
+            a=b
+            b=c
+            alert("hai so sau khi dao la: "+"so 1= "+a+" so 2= "+b )
+        }
+        function layHamVaDoiCho(){
+            let n=prompt('nhap so luong so nguyen muon nhap ');
+            let mang=nhapVaonSoNguyen(n);
+            console.log('mang truoc khi dao')
+            console.log(mang)
+            mang.reverse();
+            console.log('mang sau khi dao')
+            console.log(mang)    
+        }
+        function truyenVaoMangKytu(n){
+            let mangKyTu=[];
+            for(let i=0;i<n;i++){
+                a=prompt('nhap vao ky tu thu '+(i+1));
+                if(a.length==1){
+                mangKyTu[i]=a;;
+                }
+                else{
+                    alert('nhap lai')
+                    i--;
+                }
+            }
+            return mangKyTu;
+        }
+        function kiemtraKytu(){
+            let n=prompt('nhap so luong ky tu trong mang kiem tra de nhap vao');
+            let mang=truyenVaoMangKytu(n);
+            let m=prompt('nhap ky tu muon kiem tra');
+            if(m.length>1){
+                alert("nhap lai ky tu muon kiem tra")
+                m=prompt('nhap ky tu muon kiem tra');
+            }
+            let count=0;
+            for (i=0;i<mang.length;i++){
+                if(m==mang[i]){
+                    count++;
+                }
+            }
+            if(count>0){
+                alert('ky tu '+m+' xuat hien '+count+' lan trong mang')
+                return count;
+            }
+            else{
+                alert('ky tu '+m+' khong xuat hien trong mang')
+                return -1;
+            }   
+        }
+    </script>
+    <style>
+ 
+    </style>
+</head>
+<body>
+    <button id="tinhBinhPhuong" name="tinhBinhPhuong" onclick="tinhBinhPhuong();">Tinh Binh Phuong</button><br><br>
+    <button id="tinhDienTichChuViHinhTron" name="tinhDienTichChuViHinhTron" onclick="tinhDienTichChuViHinhTron();">Tinh chu vi va dien tich</button><br><br>
+    <button id="tinhGiaiThua" name="tinhGiaiThua" onclick="tinhGiaiThua();">Tinh Giai Thua</button><br><br>
+    <button id="kiemTraVaThongBao" name="kiemTraVaThongBao" onclick="kiemTraVaThongBao();">Kiem Tra Va Thong Bao Chuoi</button><br><br>
+    <button id="kiemTraSoNguyen" name="kiemTraSoNguyen" onclick="kiemTraSoNguyen();">lay so nho nhat trong 3 so nguyen</button><br><br>
+    <button id="kiemTraNguyenDuong" name="kiemTraNguyenDuong" onclick="kiemTraNguyenDuong();">kiem tra so nguyen duong</button><br><br>
+    <button id="kiemTraVaDoiCho2soNguyen" name="kiemTraVaDoiCho2soNguyen" onclick="kiemTraVaDoiCho2soNguyen();">Kiem tra va doi cho 2 so nguyen</button><br><br>
+    <button id="layHamVaDoiCho" name="layHamVaDoiCho" onclick="layHamVaDoiCho();">lay ham va dao ham</button><br><br>
+    <button id="kiemtraKytu" name="kiemtraKytu" onclick="kiemtraKytu();">kiem tra ky tu trong mang</button><br><br>
+    <script>
+    </script>
+</body>
+</html>
