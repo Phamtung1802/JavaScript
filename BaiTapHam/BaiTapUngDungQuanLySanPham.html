@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Scoping Example</title>
@@ -7,7 +7,7 @@
       
     </script>
     <style>
-        *{
+        * {
             box-sizing: border-box;
             font-family: tahoma;
         }
@@ -52,8 +52,14 @@
             border:none;
             width:100%;
         }
-        table:nth-child(odd){
+        table:nth-child(odd) {
             background-color: #dad6d6;
+        }
+        .floatright{
+            float:right;
+        }
+        #soluongsanpham{
+            width:120px;
         }
 
     </style>
@@ -64,33 +70,60 @@
             <div style="margin:5px;"><h4>&nbsp;Add New Product</h4></div>
             <div class="addprod">
             <input type="text" id="nhapSanPham" placeholder=" New Product">    
-            <button onclick="addProduct()">Add</button>
+            <button onclick="addProduct();">Add</button>
             </div>
         </div>
         <div class="ProductList">
             <div style="margin:5px;"><h4>Display All Product</h4></div>
             <table id="bang">
-                <tr>
-                    <td style="font-weight: bold; width:50%">Product Name</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td id="soluongsanpham">&nbsp;</td>
-                </tr>
+                <tbody id="body">
+                    <tr>
+                        <td style="font-weight: bold; width:40%">Product Name</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td id="soluongsanpham"></td>
+                    </tr>
+                </tbody> 
             </table>
         </div>
     </div>
     <script>
-       
+        let mang=[];
+        let i=0;
+        function printList(){
+            document.getElementById('body').innerHTML='<tr><td style="font-weight: bold; width:50%">Product Name</td><td>&nbsp;</td><td>&nbsp;</td><td id="soluongsanpham">&nbsp;</td></tr>';
+            for (let j=0;j<mang.length;j++){
+                themdong="<tr><td>"+mang[j]+"</td>"+'<td><button class="floatright" onclick="edit('+j+')">Edit</button></td><td><button class="floatright" " onclick="deleteProduct('+j+')">Delete</button></td><td>&nbsp;</td>'
+                document.getElementById('body').innerHTML+=themdong;
+            }
+        }
         function addProduct(){
             let a=document.getElementById('nhapSanPham').value;
-            let themdong="<tr id="+a+"1><td>"+a+"</td>"+'<td><button onclick="edit()">Edit</button></td><td><button id='+a+'" onclick="delete()">Delete</button></td><td>&nbsp;</td>'
-            document.getElementById('bang').innerHTML+=themdong;
+            mang[i]=a;
+            printList();
+            i=mang.length;
         }
-        function deleteProduct(){
-            let a=document.getElementById(a).value;
-            let xoadong="<tr id="+a+"><td>"+a+"</td>"+'<td><button onclick="edit()">Edit</button></td><td><button onclick="delete()">Delete</button></td><td>&nbsp;</td>'
-            document.getElementById('bang').innerHTML-=xoadong;
+        function deleteProduct(e){
+            mang.splice(e,1);
+            printList();
+            i=mang.length;
         }
+        function edit(e){
+            let a=mang[e];
+            mang[e]='<input id="o'+e+'" type="text" value="'+mang[e]+'"  style="background-color:#dad6d6; padding-left:3px;"><button class="floatright" onclick="finish('+e+')">Finish</button>'
+
+            printList();
+        }
+        function finish(k){
+            let diachi="o"+k;
+            let giatri=document.getElementById(diachi).value
+            mang[k]=giatri;
+            printList();
+        }
+        
+
+
+
         
     </script>
 </body>
