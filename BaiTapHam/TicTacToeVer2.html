@@ -7,7 +7,7 @@
     </script>
     <style>
         table {
-            width:50%;
+            width:1000px;
             margin: 0 auto;
             border-collapse: collapse;
             border: 1px black solid;
@@ -24,6 +24,8 @@
     <script type="text/javascript">
         let oBanCo=[];
         let flag="X";
+        let posX=0;
+        let posY=0;
 
         function drawBoard(size){
             let string="<table>";
@@ -39,21 +41,72 @@
             string+="</table>"
             document.write(string);
         }
-
-        function danhCo(element,posX,posY){
-            if(element.innerHTML=="&nbsp;")
-            element.innerHTML=flag;
-            oBanCo[posX][posY]=flag;
-            if(flag=="X"){
-            flag="O";
+        function danhCo(element,a,b){
+            if(element.innerHTML=="&nbsp;"){
+                element.innerHTML=flag;
+                oBanCo[a][b]=flag;
+                if(flag=="X"){
+                flag="O";
+                }
+                else if(flag=="O"){
+                    flag="X";
+                }
             }
-            else if(flag=="O"){
-                flag="X";
+           test();
+        }
+        function test(){
+            for(j=0;j<oBanCo.length;j++){
+                for(k=j,i=0; k<oBanCo.length-4;k++,i++){
+                    if((oBanCo[k][i]!="-1")&&(oBanCo[k][i]==oBanCo[k+1][i+1])&&(oBanCo[k+1][i+1]==oBanCo[k+2][i+2])&&(oBanCo[k+2][i+2]==oBanCo[k+3][i+3])&&(oBanCo[k+3][i+3]==oBanCo[k+4][i+4])){
+                        alert (oBanCo[k][i]+ " Win");
+                        location.reload(); 
+                    }
+                    
+                }
             }
-           console.log(oBanCo[posX][posY])
+            for(j=0;j<oBanCo.length;j++){
+                for(i=j,k=oBanCo.length-1; i<oBanCo.length; k--,i++){
+                    if((oBanCo[k][i]!="-1")&&(oBanCo[k][i]==oBanCo[k-1][i+1])&&(oBanCo[k-1][i+1]==oBanCo[k-2][i+2])&&(oBanCo[k-2][i+2]==oBanCo[k-3][i+3])&&(oBanCo[k-3][i+3]==oBanCo[k-4][i+4])){
+                        alert (oBanCo[k][i]+ " Win");
+                        location.reload(); 
+                    }
+                }
+            }
+            for(j=0;j<oBanCo.length;j++){
+                for(i=j, k=0; i<oBanCo.length-4; i++,k++){
+                    if((oBanCo[k][i]!="-1")&&(oBanCo[k][i]==oBanCo[k+1][i+1])&&(oBanCo[k+1][i+1]==oBanCo[k+2][i+2])&&(oBanCo[k+2][i+2]==oBanCo[k+3][i+3])&&(oBanCo[k+3][i+3]==oBanCo[k+4][i+4])){
+                        alert (oBanCo[k][i]+ " Win");
+                        location.reload(); 
+                    }
+                }
+            }
+            for(j=oBanCo.length-1;j>=0;j--){
+                for(i=j, k=0; i>=0; i--,k++){
+                    if((oBanCo[k][i]!="-1")&&(oBanCo[k][i]==oBanCo[k+1][i-1])&&(oBanCo[k+1][i-1]==oBanCo[k+2][i-2])&&(oBanCo[k+2][i-2]==oBanCo[k+3][i-3])&&(oBanCo[k+3][i-3]==oBanCo[k+4][i-4])){
+                        alert (oBanCo[k][i]+ " Win");
+                        location.reload();
+                    }
+                }
+            }
+            for(i=0; i<oBanCo.length; i++){
+                for(j=0;j<oBanCo.length-4;j++){
+                    if((oBanCo[i][j]!="-1")&&(oBanCo[i][j]==oBanCo[i][j+1])&&(oBanCo[i][j+1]==oBanCo[i][j+2])&&(oBanCo[i][j+2]==oBanCo[i][j+3])&&(oBanCo[i][j+3]==oBanCo[i][j+4])){
+                        alert (oBanCo[i][j]+ " Win");
+                        location.reload(); 
+                    }
+                }
+            }
+            for(j=0;j<oBanCo.length;j++){
+                for(i=0; i<oBanCo.length-4; i++){
+                    if((oBanCo[i][j]!="-1")&&(oBanCo[i][j]==oBanCo[i+1][j])&&(oBanCo[i+1][j]==oBanCo[i+2][j])&&(oBanCo[i+2][j]==oBanCo[i+3][j])&&(oBanCo[i+3][j]==oBanCo[i+4][j])){
+                        alert (oBanCo[i][j]+ " Win");
+                        location.reload(); 
+                    }
+                }
+            }
         }
         drawBoard(20);
-        console.log(oBanCo);
+       
     </script>
 </body>
 </html>
