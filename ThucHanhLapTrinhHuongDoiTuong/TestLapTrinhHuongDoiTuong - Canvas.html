@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title>Scoping Example</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        canvas {
+            border:solid;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var grd = ctx.createLinearGradient(0,0,200,0);
+        var grd2 = ctx.createRadialGradient(75,50,5,90,60,100);
+        ctx.fillStyle = grd2;
+        grd.addColorStop(0,"red");
+        grd.addColorStop(1,"white");
+        grd2.addColorStop(0,"red");
+        grd2.addColorStop(1,"white");
+        ctx.moveTo(0,0);
+        ctx.lineTo(400,400);
+        ctx.stroke();
+        ctx.moveTo(0,400);
+        ctx.lineTo(400,0);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(200,200,200,0,2*Math.PI);
+        ctx.stroke();
+        ctx.font = "30px Arial";
+        ctx.fillText("Hello World",130,350);
+        //ctx.fillStyle = grd;
+    </script>
+</body>
+</html>

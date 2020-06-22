@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <title>Scoping Example</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    let Circle = function(radius, color) {        
+        this.radius = radius;        
+        this.color = color;
+        this.getRadius = function(){
+            return radius;
+        }
+        this.getArea  = function(){
+            return Math.PI * radius * radius;
+        }               
+    };
+    let circle = new Circle(2);
+    document.write(circle.getRadius()+"<br>");
+    document.write(circle.getArea()+"<br>");
+    let circle3 = new Circle(3);
+    document.write(circle3.getRadius()+"<br>");
+    document.write(circle3.getArea()+"<br>");
+    let circle4 = new Circle(4);
+    document.write(circle4.getRadius()+"<br>");
+    document.write(circle4.getArea()+"<br>");
+    let circle5 = new Circle(5);
+    document.write(circle5.getRadius()+"<br>");
+    document.write(circle5.getArea()+"<br>");
+    </script>
+</body>
+</html>

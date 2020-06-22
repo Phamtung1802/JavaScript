@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <title>Scoping Example</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        let myDataName = 'height';
+        let myDataValue = '1.75m';
+        let person = {
+            name: ['Bob', 'Smith'],
+            age: 32,
+            gender: 'male',
+            interests: ['music', 'skiing'],
+            bio: function() {
+            alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+            },
+            greeting: function() {
+            alert('Hi! I\'m ' + this.name[0] + '.');
+            }
+        };
+        myDataName = 'height';
+        person[myDataName] = myDataValue;
+        person['eyes'] = ['hazel','aquamarine'];
+        let person1 = {
+            name: 'Chris',
+            greeting: function() {
+                alert('Hi! I\'m ' + this.name + '.');
+            }
+        };
+        let person2 = {
+            name: 'Brian',
+            greeting: function() {
+                alert('Hi! I\'m ' + this.name + '.');
+            }
+        };
+        // initiate new class
+        function Apple (type) {
+        this.type = type;
+        this.color = "red";
+         // define method
+        this.getInfo = function() {
+            return this.color + ' ' + this.type + ' apple';
+            };
+        }
+        // declare new object with parameter
+        function Orange (type) {
+            this.type = type;
+            this.color = "Orange";
+            Orange.prototype.getInfo = function() {
+            return this.color + ' ' + this.type + ' Orange';
+            };
+        }
+      
+        let apple= new Apple('Envy');
+        let orange = new Orange('Cam')
+        let camSanh= new Orange('Cam Sanh')
+        alert(camSanh.getInfo(camSanh));
+
+    </script>
+    <style>
+ 
+    </style>
+</head>
+<body>
+    <button id="xinChao" name="xinChao" onclick="alertMessage();">Click!!!</button>
+
+    </script>
+</body>
+</html>

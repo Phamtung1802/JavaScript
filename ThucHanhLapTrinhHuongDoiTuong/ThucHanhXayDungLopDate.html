@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <title>Scoping Example</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    let MyDate = function(day, month, year) {        
+        this.day = day;        
+        this.month = month;        
+        this.year = year;
+        this.getDay = function(){
+            return this.day;
+        }
+        this.getMonth = function(){
+            return this.month;
+        }
+        this.getYear = function(){
+            return this.year;
+        }    
+        this.setDay = function(day) {
+            this.day  = day;
+            return this.day
+        }
+        this.setMonth = function(month) {
+            this.month  = month;
+            return this.month;
+        }
+        this.setYear = function(year) {
+            this.year  = year;
+            return this.year;
+        }
+        this.setDate = function format(day, month, year) {
+            return (day+'/'+month+'/'+year);
+        }    
+    };
+    let date = new MyDate(2, 2, 2007);
+    let day = date.getDay(); // 2
+    let month = date.getMonth(); // 2
+    let year = date.getYear(); // 2007
+    day = date.setDay(12);
+    month = date.setMonth(30);
+    year = date.setYear(2019);
+    alert(date.setDate(day, month, year));
+    </script>
+</body>
+</html>
