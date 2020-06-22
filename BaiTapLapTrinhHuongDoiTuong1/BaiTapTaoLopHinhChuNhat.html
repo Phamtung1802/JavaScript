@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <title>Rectangle Class Practice</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="1920px" height="1080px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        let cacloai=[];
+        let i=0;
+        function Rectangle(d, r){
+            this.d = parseInt(d);
+            this.r = parseInt(r);
+        }
+        Rectangle.prototype.tinhChuvi=function() {
+            return (this.d*2+this.r*2)
+        }
+        Rectangle.prototype.tinhDienTich=function() {
+            return (this.d*this.r)
+        }
+        function drawRectangle(){
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.moveTo(30,30);
+            ctx.lineTo(d,30);
+            ctx.stroke();
+            ctx.lineTo(d,r);
+            ctx.stroke();
+            ctx.lineTo(30,r);
+            ctx.stroke();
+            ctx.lineTo(30,30);
+            ctx.stroke();
+
+        }
+        let d=+prompt('nhap d')
+        let r=+prompt('nhap r')
+        let chunhat= new Rectangle(d,r);
+        alert("chieu Dai La "+chunhat.d+" chieu Rong la "+ chunhat.r+" Chu vi la "+chunhat.tinhChuvi()+" Dien tich la "+ chunhat.tinhDienTich());
+        drawRectangle();
+
+    </script>
+</body>
+</html>

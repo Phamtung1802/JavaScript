@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <title>Temperature Class Practice</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let cacloai=[];
+        let i=0;
+        function Temperature(Cdegree){
+            this.Cdegree = parseInt(Cdegree);
+        }
+        Temperature.prototype.doF=function() {
+            return (this.Cdegree*1.8+32)
+        }
+        Temperature.prototype.doK=function() {
+            return (this.Cdegree*+273.15)
+        }
+       let doC = new Temperature(25);
+       document.write("doF la "+doC.doF()+"<br> DoK la "+doC.doK()+"<br>") 
+
+    </script>
+</body>
+</html>

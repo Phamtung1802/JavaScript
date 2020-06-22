@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <title>Mobile Phone Class Practice</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let cacloai=[];
+        let i=0;
+        function MobilePhone(brand, draft, inbox, sent, powerBar, isOn){
+            this.brand = brand;
+            this.draft= draft;
+            this.inbox= inbox;
+            this.sent= sent;
+            this.powerBar=100;
+            this.isOn=false;
+        }
+        MobilePhone.prototype.TurnOff=function (){
+            if (this.isOn==true){
+                alert("Da Tat Dien Thoai "+this.brand)
+                this.isOn=false;
+            }
+            this.powerBar--;
+            return this.isOn;
+        }
+        MobilePhone.prototype.TurnOn=function (){
+            if (this.isOn==false){
+                alert("Da bat Dien Thoai "+this.brand)
+                this.isOn=true;
+            }
+            this.powerBar--;
+            return this.isOn;
+        }
+        MobilePhone.prototype.chargePhone= function(){
+            if(this.isOn==true){
+            this.powerBar=100;
+            }
+        }
+        MobilePhone.prototype.Compose=function(){
+            if(this.isOn==true){
+            compose=prompt('nhap tin nhan');
+            this.draft=compose;
+            this.powerBar--;
+            return compose;
+            }
+        }
+        MobilePhone.prototype.sendMessage= function(){
+            let Message=this.draft;
+            this.sent.push(Message);
+            this.draft="";
+            this.powerBar--;
+            return Message;
+        }
+        MobilePhone.prototype.receiveMessage= function(sender){
+            let Message=sender;
+            this.inbox.push(Message);
+            this.powerBar--;
+        }
+        MobilePhone.prototype.checkInbox= function(){
+            if (this.isOn==true){
+                for(i=0;i<this.inbox.length;i++){
+                    document.write(this.brand+" Inbox Item: "+this.inbox[i]);
+                }
+            }
+        }
+        MobilePhone.prototype.checkSent=function(){
+            if (this.isOn==true){
+                for(i=0;i<this.sent.length;i++){
+                    document.write('<br>'+this.brand+" Sent Item: "+this.sent[i]);
+                }
+            }
+        }
+        //MobilePhone(brand, draft, inbox, sent, powerBar, isOn)
+        let Nokia=new MobilePhone("Nokia",draft="",inbox=[],sent=[], 100, false);
+        let Apple=new MobilePhone("Apple",draft="",inbox=[],sent=[], 100, false);
+        Nokia.TurnOn();
+        Apple.TurnOn();
+        Nokia.Compose();
+        Apple.receiveMessage(Nokia.sendMessage());
+        Apple.checkInbox();
+        Nokia.checkSent();
+        Apple.chargePhone();
+        Nokia.chargePhone();
+
+
+    </script>
+</body>
+</html>
