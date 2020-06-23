@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+  </head>
+  <body>
+    <div id="game"></div>
+    <script>
+        function Apple(weight){
+          this.weight=weight;
+          this.getWeight=function(){
+            return this.weight;
+          }
+        }
+        function Human(name, gender, weight){
+          this.name=name;
+          this.gender=gender;
+          this.weight=weight;
+          this.Apple=+0;
+
+          this.isMale=function(){
+            if (this.gender==((Male)||(male))){
+              return true;
+            }
+            if (this.gender==((Female)||(female))){
+              return false;
+            }
+            else {
+              return null;
+            }
+          }
+
+          this.setGender=function(updateGender){
+            this.gender=updateGender
+          }
+
+          this.checkApple=function(apple){
+            this.Apple+=1
+          }
+          this.eatApple=function(apple){
+            apple.weight=null;
+            this.Apple-=1;
+          }
+          this.say=function(say){
+            alert(say);
+            return say;
+          }
+          this.getName= function(){
+            return this.name;
+          }
+          this.getWeight=function(){
+            return this.weight;
+          }
+          this.setWeight=function(updateWeight){
+            this.weight=updateWeight;
+          }
+          this.getGender=function(){
+            return this.gender;
+          }
+        }
+
+
+        const Default_Apple=10;
+        var AdamApple=new Apple(Default_Apple);
+        var EvaApple=new Apple(Default_Apple);
+        var Adam= new Human("Adam","Male","100kg");
+        var Eva= new Human("Eva","Female","100kg");
+
+        Adam.checkApple(AdamApple);
+        Eva.checkApple(EvaApple);
+        console.log(Adam,Eva);
+        Adam.eatApple(AdamApple);
+        Adam.say(Adam.name+": This apple is delicious");
+        Eva.eatApple(EvaApple);
+        Eva.say(Eva.name+": This apple is delicious");
+        Adam.setWeight("110kg");
+        Eva.setWeight("110kg");
+        console.log(Adam,Eva);
+
+
+    </script>
+  </body>
+</html>

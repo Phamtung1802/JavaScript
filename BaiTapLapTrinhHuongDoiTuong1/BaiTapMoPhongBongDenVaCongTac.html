@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+  </head>
+  <body>
+    <div id="game"></div>
+    <script>
+        function Switch(status){
+          this.status=status;
+          this.isConnectedtoBulb=function(isConnectedtoBulb){
+            return isConnectedtoBulb;
+          }
+          this.connect=function(){
+              this.status[1]=true;
+              return this.status[1];
+          }
+          this.switchOn=function(SwitchPos){
+            if(SwitchPos=="Off"){
+              this.status[0]="On"
+              document.write("Switch is On <br>");
+              return this.status[0];
+            }
+            else {
+              this.status[0]="Off";
+              document.write("Switch is Off <br>");
+              return this.status[0]
+            }
+          }
+        }
+        function LightBulb(status){
+          this.status=status;
+          this.isConnectedtoSwitch=function(){
+            return this.status[1];
+          }
+          this.connect=function(){
+              this.status[1]=true;
+          }
+          this.isOn=function(){
+            if (this.isConnectedtoSwitch()==true){
+              if (this.status[0]=='On'){
+                return true;
+              }
+              if (this.status[0]=='Off'){
+                return false;
+              }
+            }  
+          }
+          this.setStatus=function(set){
+            this.status[0]=set;
+            document.write("Bulb is "+ this.status[0]+"<br>")
+          }
+        }
+        
+        let Connection=false;
+        let BulbPower="Off"
+        let SwitchPos="Off"
+        var Bulbstatus=[BulbPower, Connection]
+        var Switchstatus=[SwitchPos, Connection]
+        var ElectricBulb=new LightBulb(Bulbstatus);
+        var BulbSwitch=new Switch(Switchstatus)
+        ElectricBulb.connect();
+        BulbSwitch.connect();
+        Connection=ElectricBulb.isConnectedtoSwitch();
+
+        for (let i=0; i<10;i++){
+          document.write((i+1)+"<br>")
+          ElectricBulb.setStatus(BulbSwitch.switchOn(BulbSwitch.status[0]));
+          ElectricBulb.setStatus(BulbSwitch.switchOn(BulbSwitch.status[0]));
+        }
+       
+     
+
+    </script>
+  </body>
+</html>
