@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+    <style>
+      
+      *{
+        box-sizing: border-box;
+        padding:0px;
+      }
+      div {
+        border-collapse: collapse;
+        width: 1000px;
+        margin: 0 auto;
+        padding: 0px;    
+        margin-top:0px ;
+        display: table;
+        line-height: 0px;
+      }
+      .cell {
+        width: 50px;
+        height: 50px;
+        padding: 0px;
+        margin:0px;
+        border: black 1px solid;
+        border-style: groove;
+        display: inline-block;
+        line-height: 25px; 
+        text-align: center;
+        padding-top: 12.5px;
+        font-family: tahoma;
+        font-weight: bold;
+        font-size: 20px;
+        color:brown;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game" style="background-image: url('');"></div>
+    <script>
+      function banCo(cell,id,status,ToaDo) {
+        let color="red";
+        let token="&nbsp;"
+        this.Xpos=0;
+        this.Ypos=0;
+        this.cell=cell;
+        this.id=id;
+        this.status=status;
+        this.ToaDo=ToaDo
+        this.innerHTML=document.getElementById("game").innerHTML;
+        this.divOpen='<div'
+        this.divStyle=' id=\"X'+this.Xpos+'Y'+this.Ypos+'\" class=\"cell\" style=\"color:'+color+'\" onclick=\"DanhCo=:'+color+'\">'
+        this.divContent=token;
+        this.divClose='</div>'
+        this.divBreak='<br>'
+
+        this.init=function(){
+          for(let i=0;i<this.cell;i++){
+            this.ToaDo[i]=[]
+            for(let j=0;j<this.cell;j++){
+              this.ToaDo[i][j]="&nbsp;"
+            }
+          }
+        }
+        
+        this.Draw=function(){
+          for(let i=0;i<this.cell;i++){
+            this.innerHTML+=this.divBreak;
+            this.Ypos=i;
+            this.divStyle=' id=\"X'+this.Xpos+'Y'+this.Ypos+'\" class=\"cell\" style=\"color:'+color+'\">'
+            for(let j=0;j<this.cell;j++){
+              this.Xpos=j;
+              this.divStyle=' id=\"X'+this.Xpos+'Y'+this.Ypos+'\" class=\"cell\" style=\"color:'+color+'\">'
+              this.innerHTML+= this.divOpen+this.divStyle+this.divContent+this.divClose;
+            }
+          }
+          document.getElementById("game").innerHTML=this.innerHTML;
+        }
+      }
+      let toado=[];
+      let Board=new banCo(cell=20,"","",toado);
+      Board.init(this.cell);
+      Board.Draw();
+      
+
+    </script>
+  </body>
+</html>
