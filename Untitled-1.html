@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeGym Ca-ro Demo</title>
+</head>
+<body>
+<div id="game-board">
+</div>
+<script>
+function checkIndex(maxIndex) {
+return maxIndex;
+}
+
+function migratoryBirds(arr) {
+    let n=arr.length
+    let type=[];
+    let max=[];
+    
+    for (let i=0;i<n;i++){
+      for(let j=i+1; j<n;j++){
+        if((type.indexOf(arr[i])==(-1))){
+          type.push(arr[i]);
+          console.log(arr[i])
+        }
+      }
+    }
+   
+    for(let j=0, count=0;j<type.length; j++){
+      for(let i=0;i<arr.length; i++){
+        if(type[j]==arr[i]){
+        count++
+        }
+      }
+      max.push(count)
+      count=0;
+    }
+    let maxIndex=max[0];
+    let count2=0
+    for(i=1;i<max.length;i++){
+      if(maxIndex<max[i]){
+        maxIndex=max[i]
+        count2++
+      }
+    }
+    return type[count2];
+
+}
+migratoryBirds([1,3,4,1,2,3,1,2,3,3,1,3,4,1,6,3,3,3,3,3,3,3])
+</script>
+</body>
+</html>
