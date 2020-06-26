@@ -1,90 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!doctype html>
+<html>
+<head>
+    <title>Scoping Example</title>
     <meta charset="UTF-8">
-    <title>Objects</title>
-    <style>
-      
-      *{
-        box-sizing: border-box;
-        padding:0px;
-      }
-      div {
-        border-collapse: collapse;
-        width: 1000px;
-        margin: 0 auto;
-        padding: 0px;    
-        margin-top:0px ;
-        display: table;
-        line-height: 0px;
-      }
-      .cell {
-        width: 50px;
-        height: 50px;
-        padding: 0px;
-        margin:0px;
-        border: black 1px solid;
-        border-style: groove;
-        display: inline-block;
-        line-height: 25px; 
-        text-align: center;
-        padding-top: 12.5px;
-        font-family: tahoma;
-        font-weight: bold;
-        font-size: 20px;
-        color:brown;
-
-      }
-    </style>
-  </head>
-  <body>
-    <div id="game" style="background-image: url('');"></div>
-    <script>
-      function banCo(cell,id,status,ToaDo) {
-        let color="red";
-        let token="&nbsp;"
-        this.Xpos=0;
-        this.Ypos=0;
-        this.cell=cell;
-        this.id=id;
-        this.status=status;
-        this.ToaDo=ToaDo
-        this.innerHTML=document.getElementById("game").innerHTML;
-        this.divOpen='<div'
-        this.divStyle=' id=\"X'+this.Xpos+'Y'+this.Ypos+'\" class=\"cell\" style=\"color:'+color+'\" onclick=\"DanhCo=:'+color+'\">'
-        this.divContent=token;
-        this.divClose='</div>'
-        this.divBreak='<br>'
-
-        this.init=function(){
-          for(let i=0;i<this.cell;i++){
-            this.ToaDo[i]=[]
-            for(let j=0;j<this.cell;j++){
-              this.ToaDo[i][j]="&nbsp;"
-            }
-          }
-        }
-        
-        this.Draw=function(){
-          for(let i=0;i<this.cell;i++){
-            this.innerHTML+=this.divBreak;
-            this.Ypos=i;
-            this.divStyle=' id=\"X'+this.Xpos+'Y'+this.Ypos+'\" class=\"cell\" style=\"color:'+color+'\">'
-            for(let j=0;j<this.cell;j++){
-              this.Xpos=j;
-              this.divStyle=' id=\"X'+this.Xpos+'Y'+this.Ypos+'\" class=\"cell\" style=\"color:'+color+'\">'
-              this.innerHTML+= this.divOpen+this.divStyle+this.divContent+this.divClose;
-            }
-          }
-          document.getElementById("game").innerHTML=this.innerHTML;
-        }
-      }
-      let toado=[];
-      let Board=new banCo(cell=20,"","",toado);
-      Board.init(this.cell);
-      Board.Draw();
-      
-
+    <script type="text/javascript">
     </script>
-  </body>
+    <style>
+        table {
+            width:1000px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 1px black solid;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px black solid;
+            text-align: center;
+            color:brown;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        let oBanCo=[];
+        let flag="X";
+        let posX=0;
+        let posY=0;
+
+        function drawBoard(size){
+            let string="<table>";
+            for(i=0;i<size;i++){
+                oBanCo[i]=[];
+                string+="<tr>"
+                for(j=0;j<size;j++){
+                    string+='<td onclick="danhCo(this,'+i+','+j+');">&nbsp;</td>'
+                    oBanCo[i][j]=-1;
+                }
+                string+="</tr>"
+            }
+            string+="</table>"
+            document.write(string);
+        }
+        function danhCo(element,a,b){
+            if(element.innerHTML=="&nbsp;"){
+                element.innerHTML=flag;
+                oBanCo[a][b]=flag;
+                if(flag=="X"){
+                flag="O";
+                }
+                else if(flag=="O"){
+                    flag="X";
+                }
+            }
+           test();
+        }
+        function test(){
+            for(j=0;j<oBanCo.length;j++){
+                for(k=j,i=0; k<oBanCo.length-4;k++,i++){
+                    if((oBanCo[k][i]!="-1")&&(oBanCo[k][i]==oBanCo[k+1][i+1])&&(oBanCo[k+1][i+1]==oBanCo[k+2][i+2])&&(oBanCo[k+2][i+2]==oBanCo[k+3][i+3])&&(oBanCo[k+3][i+3]==oBanCo[k+4][i+4])){
+                        alert (oBanCo[k][i]+ " Win");
+                        location.reload(); 
+                    }
+                    
+                }
+            }
+            for(j=0;j<oBanCo.length;j++){
+                for(i=j,k=oBanCo.length-1; i<oBanCo.length; k--,i++){
+                    if((oBanCo[k][i]!="-1")&&(oBanCo[k][i]==oBanCo[k-1][i+1])&&(oBanCo[k-1][i+1]==oBanCo[k-2][i+2])&&(oBanCo[k-2][i+2]==oBanCo[k-3][i+3])&&(oBanCo[k-3][i+3]==oBanCo[k-4][i+4])){
+                        alert (oBanCo[k][i]+ " Win");
+                        location.reload(); 
+                    }
+                }
+            }
+            for(j=0;j<oBanCo.length;j++){
+                for(i=j, k=0; i<oBanCo.length-4; i++,k++){
+                    if((oBanCo[k][i]!="-1")&&(oBanCo[k][i]==oBanCo[k+1][i+1])&&(oBanCo[k+1][i+1]==oBanCo[k+2][i+2])&&(oBanCo[k+2][i+2]==oBanCo[k+3][i+3])&&(oBanCo[k+3][i+3]==oBanCo[k+4][i+4])){
+                        alert (oBanCo[k][i]+ " Win");
+                        location.reload(); 
+                    }
+                }
+            }
+            for(j=oBanCo.length-1;j>=0;j--){
+                for(i=j, k=0; i>=0; i--,k++){
+                    if((oBanCo[k][i]!="-1")&&(oBanCo[k][i]==oBanCo[k+1][i-1])&&(oBanCo[k+1][i-1]==oBanCo[k+2][i-2])&&(oBanCo[k+2][i-2]==oBanCo[k+3][i-3])&&(oBanCo[k+3][i-3]==oBanCo[k+4][i-4])){
+                        alert (oBanCo[k][i]+ " Win");
+                        location.reload();
+                    }
+                }
+            }
+            for(i=0; i<oBanCo.length; i++){
+                for(j=0;j<oBanCo.length-4;j++){
+                    if((oBanCo[i][j]!="-1")&&(oBanCo[i][j]==oBanCo[i][j+1])&&(oBanCo[i][j+1]==oBanCo[i][j+2])&&(oBanCo[i][j+2]==oBanCo[i][j+3])&&(oBanCo[i][j+3]==oBanCo[i][j+4])){
+                        alert (oBanCo[i][j]+ " Win");
+                        location.reload(); 
+                    }
+                }
+            }
+            for(j=0;j<oBanCo.length;j++){
+                for(i=0; i<oBanCo.length-4; i++){
+                    if((oBanCo[i][j]!="-1")&&(oBanCo[i][j]==oBanCo[i+1][j])&&(oBanCo[i+1][j]==oBanCo[i+2][j])&&(oBanCo[i+2][j]==oBanCo[i+3][j])&&(oBanCo[i+3][j]==oBanCo[i+4][j])){
+                        alert (oBanCo[i][j]+ " Win");
+                        location.reload(); 
+                    }
+                }
+            }
+        }
+        drawBoard(20);
+       
+    </script>
+</body>
 </html>
